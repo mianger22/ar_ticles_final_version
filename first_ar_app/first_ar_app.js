@@ -56,21 +56,7 @@ function common_copy_function(code, id_icon) {
     console.clear();
     console.log("code 0: ", code);
     console.log("id_icon: ", id_icon);
-    // navigator.clipboard.writeText(code);
-
-
-    async function copyCode() {
-        try {
-            await navigator.clipboard.writeText(code);
-        } catch (e) {
-            console.log(e);
-        }
-       }
-
-       copyCode()
-
-
-
+    navigator.clipboard.writeText(code);
     // меняем иконку копирования на иконку успеха
     document.getElementById(id_icon).innerHTML = success_copy_icon;
     // возвращаем иконку копирования

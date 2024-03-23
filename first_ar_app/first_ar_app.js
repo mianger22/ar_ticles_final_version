@@ -53,9 +53,6 @@ const success_copy_icon = `<img width="32" height="32" src="https://img.icons8.c
 
 function common_copy_function(code, id_icon) {
     // копируем код
-    console.clear();
-    console.log("code 0: ", code);
-    console.log("id_icon: ", id_icon);
     navigator.clipboard.writeText(code);
     // меняем иконку копирования на иконку успеха
     document.getElementById(id_icon).innerHTML = success_copy_icon;

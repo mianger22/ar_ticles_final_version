@@ -1,1 +1,0 @@
-window.location.replace("./first_ar_app/first_ar_app.html")

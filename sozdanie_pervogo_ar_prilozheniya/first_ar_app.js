@@ -100,12 +100,12 @@ function copy(id) {
 
 // затемнение ссылки в меню ссылок, если она активна
 function muteLinkActive() {
-    let link1 = document.getElementById("link1");
+    let link = document.getElementById("sozdanie_pervogo_ar_prilozheniya");
 
-    if (window.location.pathname === "/first_ar_app/first_ar_app.html") {
-        link1.style.color = "gray";
-        link1.style.textDecoration = "none";
-        link1.disabled = true;
+    if (window.location.pathname === "/sozdanie_pervogo_ar_prilozheniya/index.html") {
+        link.style.color = "gray";
+        link.style.textDecoration = "none";
+        link.disabled = true;
     }
 }
 

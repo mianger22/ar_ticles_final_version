@@ -50,7 +50,7 @@
                 </p>
             </article>
             <article class="uk-article">
-                <p class="uk-text-lead">2. Создаём стандартный html-файл</p>
+                <p class="uk-text-lead">2. Создаём стандартный html-файл 2</p>
                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                     <div class="uk-card-badge uk-background-default">
                         <div onclick="copy('create_default_html')" id="create_default_html_icon" style="cursor: pointer;">
@@ -58,12 +58,12 @@
                         </div>
                     </div>
                     <p>
-                        <div style="white-space: pre-line; word-break: break-all;" id="create_default_html"></div>
+                        <code><div style="white-space: pre-line; word-break: break-all;" id="create_default_html"></div></code>
                     </p>
                 </div>
                 <p>
-                    <b>Attention!</b> Мы пишем <span><b>&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</b></span>
-                        вместо <span><b>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</b></span> для того, чтобы камера была без неприятного и неудобного увеличения
+                    <b>Attention!</b> Мы пишем <code>&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
+                        вместо <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
                 </p>
             </article>
             <article class="uk-article">
@@ -96,14 +96,14 @@
                     Что делает данный код?
                 </p>
                 <p>
-                    Во-первых, <b>a-scene</b> создаёт сцену
+                    Во-первых, <code>a-scene</code> создаёт сцену
                 </p>
                 <p>
-                    Во-вторых, <b>a-marker</b> ищет маркер наведённой камерой. Его аттрибут <b>preset="hiro"</b> позволяет программе понять - какой маркер ей искать
+                    Во-вторых, <code>a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code>preset="hiro"</code> позволяет программе понять - какой маркер ей искать
                     Всё, что внутри - выводит нужное нам содержимое над маркеромю. У нас это текст
                 </p>
                 <p>
-                    Внимание! Я использовал <b>a-text</b> вместо <b>a-entity</b>, для того чтобы текст был крупнее. Вы же можете использовать его: 
+                    Внимание! Я использовал <code>a-text</code> вместо <code>a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
                 </p>
                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                     <div class="uk-card-badge uk-background-default">
@@ -116,7 +116,7 @@
                     </p>
                 </div>
                 <p>
-                    <b>Примечание</b>. Что такое <b>a-entity text ...</b> и откуда я взял <b>a-text</b> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
+                    <b>Примечание</b>. Что такое <code>a-entity text ...</code> и откуда я взял <code>a-text</code> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
                 </p>
                 <p>
                     В итоге получился следующий код нашего первого AR-приложения:
@@ -154,7 +154,7 @@
                         В итоге Вы создали пустой репозиторий для запуска Вашего AR-приложения.
                     </p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/create_repository.jpg" alt="Создание репозитория">
                         </div>
                     </p>
@@ -165,12 +165,12 @@
                         Попав на страницу репозитория, жмём по зелёной кнопке <i>Code</i> и копируем значение из поля строки, кликнув по иконке сбоку.
                     </p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/click_by_button_code.jpg" alt="Нажатие кнопки Code">
                         </div>
                     </p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/copy_url.jpg" alt="Копирование url">
                         </div>
                     </p>
@@ -181,13 +181,13 @@
                         Если решили воспользоваться Git Bash, то кликаете в выбранном месте правой кнопкой, выбираете <i>Open Git Bash here</i>, запускаете. Если же остановились на командной строке, то, кликнув правой кнопкой мыши, выбираете <i>Открыть в терминале</i>.
                     </p>
                     <p>
-                        Вводите <i>git clone</i> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
+                        Вводите <code>git clone</code> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
                     </p>
                     <p>
                         <u>* Открытый терминал не закрывайте!</u>
                     </p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/open_gitbash.jpg" alt="Открытие Git Bash">
                         </div>
                     </p>
@@ -223,7 +223,7 @@
                         </p>
                     </div>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/success_push.jpg" alt="Успешное сохранение проекта на GitHub`е">
                         </div>
                     </p>                
@@ -233,13 +233,13 @@
                     <p class="uk-margin-small-bottom">
                         <ul>
                             <li>
-                                а) <b>git add --all</b> добавляет все изменения в отслеживаемые
+                                а) <code>git add --all</code> добавляет все изменения в отслеживаемые
                             </li>
                             <li>
-                                б) <b>git commit -m "my first commit"</b> сохраняет теперь уже отслеживаемые изменения
+                                б) <code>git commit -m "my first commit"</code> сохраняет теперь уже отслеживаемые изменения
                             </li>
                             <li>
-                                в) <b>git push</b> отправляет (сохраняет) изменения (наш код) на GitHub 
+                                в) <code>git push</code> отправляет (сохраняет) изменения (наш код) на GitHub 
                             </li>
                         </ul>
                     </p>
@@ -252,19 +252,19 @@
                     <p>Для этого:</p>
                     <p>а) Заходим в настройки проекта</p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/opening_project_settings.jpg" alt="Открытие настроек проекта">
                         </div>
                     </p>
                     <p>б) Открываем в левом блоке вкладку Pages</p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/opening_pages_tab.jpg" alt="Открытие вкладки Pages">
                         </div>
                     </p>
                     <p>в) Меняем branch с none на main и нажимаем save</p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="pictures/changing_GitHub_Pages_parameters.jpg" alt="Изменение параметров GitHub Pages">
                         </div>
                     </p>
@@ -295,10 +295,10 @@
                         6.2. Заходим по нему с телефона. Вуаля! <b>Наше приложение запущено!</b> тут анимация или смайл
                     </p>
                     <p class="uk-margin-medium-bottom">
-                        6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <b>a-marker preset="hiro"</b> - маркер по умолчанию)
+                        6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <code>a-marker preset="hiro"</code> - маркер по умолчанию)
                     </p>
                     <p>
-                        <div className="flex items-center justify-center my-6">
+                        <div class="flex items-center justify-center my-6">
                             <img src="https://leonardo.osnova.io/af634cb0-038a-5245-8169-385adf3fb9ad/-/preview/1000/-/format/webp/" alt="AR-метка">
                         </div>
                     </p>
@@ -373,7 +373,9 @@
             </div>
             <div class="uk-text-center uk-margin-large-bottom">
                 <div class="uk-margin-small-bottom">
-                    <a href="https://t.me/moyustimov">Написать мне</a>
+                    <address>
+                        <a href="https://t.me/moyustimov">Написать мне</a>
+                    </address>
                 </div>
                 <div>
                     <a href="https://t.me/+NgVMW9SB-EwwZTMy">Помощь AR.js программистов</a>

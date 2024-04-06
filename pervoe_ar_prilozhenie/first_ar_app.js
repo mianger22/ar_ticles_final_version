@@ -100,9 +100,9 @@ function copy(id) {
 
 // затемнение ссылки в меню ссылок, если она активна
 function muteLinkActive() {
-    let link = document.getElementById("sozdanie_pervogo_ar_prilozheniya");
+    let link = document.getElementById("pervoe_ar_prilozhenie");
 
-    if (window.location.pathname === "/sozdanie_pervogo_ar_prilozheniya/index.html") {
+    if (window.location.pathname === "/pervoe_ar_prilozhenie/index.html") {
         link.style.color = "gray";
         link.style.textDecoration = "none";
         link.disabled = true;

@@ -31,328 +31,345 @@
     <header></header>
     <div class="uk-child-width-expand" uk-grid>
         <main class="uk-width-3-4@m uk-padding-large">
-            <div class="uk-margin-medium-bottom uk-margin-medium-top">
-                <h1 class="uk-heading-small">Создание первого AR-приложения с помощью AR.js</h1>
-            </div>            
-            <p>
-                <img src="../common_pictures/ar_illustrations/sozdanie_pervogo_ar_prilozheniya.png" alt="AR illustration">
-            </p>
-            <noscript style="color: red;">Включите JavaScript, без него Вы не сможете освоить AR.js</noscript>
-            <article class="uk-article">
-                <p class="uk-text-lead">1. Устанавливаем необходимые инструменты</p>
+            <section>
+                <div class="uk-margin-medium-bottom uk-margin-medium-top">
+                    <h1 class="uk-heading-small">Создание первого AR-приложения с помощью AR.js</h1>
+                </div>            
                 <p>
-                    Привет всем! Итак, начнём с установки необходимых инструментов или обозначения установленных, их заменяющих. 
+                    <img src="../common_pictures/ar_illustrations/sozdanie_pervogo_ar_prilozheniya.png" alt="AR illustration">
                 </p>
-                <p>
-                    1.1. Нам понадобится любая среда разработки: VSCode, WebStorm или что-нибудь другое. 
-                </p>
-                <p>
-                    1.2. GIT - обязательно. И желательно Git Bash. Иначе придётся делать в командной строке.  Мне нравится Git Bash за удобство работы с GIT.
-                </p>
-            </article>
-            <article class="uk-article">
-                <p class="uk-text-lead">2. Создаём стандартный html-файл</p>
-                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                    <div class="uk-card-badge uk-background-default">
-                        <div onclick="copy('create_default_html')" id="create_default_html_icon" style="cursor: pointer;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
-                        </div>
-                    </div>
+            </section>
+            <section>
+                <h2>
+                    Простой и понятный алгоритм
+                </h2>
+                <noscript style="color: red;">Включите JavaScript, без него Вы не сможете освоить AR.js</noscript>
+                <article class="uk-article">
+                    <p class="uk-text-lead">1. Устанавливаем необходимые инструменты</p>
                     <p>
-                        <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="create_default_html"></code>
-                    </p>
-                </div>
-                <p>
-                    <b>Attention!</b> Мы пишем <code>&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
-                        вместо <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
-                </p>
-            </article>
-            <article class="uk-article">
-                <p class="uk-text-lead">3. Подключаем библиотеку AR.js</p>
-                <p>Прописываем подключение в разделе body:</p>
-                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                    <div class="uk-card-badge uk-background-default">
-                        <div onclick="copy('connect_ar')" id="connect_ar_icon" style="cursor: pointer;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
-                        </div>
-                    </div>
-                    <p>
-                        <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="connect_ar"></code>
-                    </p>
-                </div>
-            </article>
-            <article class="uk-article">
-                <p class="uk-text-lead">4. Пишем AR-код</p>
-                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                    <div class="uk-card-badge uk-background-default">
-                        <div onclick="copy('writing_ar')" id="writing_ar_icon" style="cursor: pointer;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
-                        </div>
-                    </div>
-                    <p>
-                        <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="writing_ar"></code>
-                    </p>
-                </div>
-                <p>
-                    Что делает данный код?
-                </p>
-                <p>
-                    Во-первых, <code>a-scene</code> создаёт сцену
-                </p>
-                <p>
-                    Во-вторых, <code>a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code>preset="hiro"</code> позволяет программе понять - какой маркер ей искать
-                    Всё, что внутри - выводит нужное нам содержимое над маркеромю. У нас это текст
-                </p>
-                <p>
-                    Внимание! Я использовал <code>a-text</code> вместо <code>a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
-                </p>
-                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                    <div class="uk-card-badge uk-background-default">
-                        <div onclick="copy('another_version_ar_text')" id="another_version_ar_text_icon" style="cursor: pointer;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
-                        </div>
-                    </div>
-                    <p>
-                        <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="another_version_ar_text"></code>
-                    </p>
-                </div>
-                <p>
-                    <b>Примечание</b>. Что такое <code>a-entity text ...</code> и откуда я взял <code>a-text</code> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
-                </p>
-                <p>
-                    В итоге получился следующий код нашего первого AR-приложения:
-                </p>
-                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                    <div class="uk-card-badge uk-background-default">
-                        <div onclick="copy('final_code')" id="final_code_icon" style="cursor: pointer;">
-                            <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
-                        </div>
-                    </div>
-                    <p>
-                        <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="final_code"></code>
-                    </p>
-                </div>
-            </article>
-            <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
-                <!-- Yandex.RTB R-A-6817575-6 -->
-                <div id="yandex_rtb_R-A-6817575-6"></div>
-                <script>
-                    window.yaContextCb.push(()=>{
-                        Ya.Context.AdvManager.render({
-                            "blockId": "R-A-6817575-6",
-                            "renderTo": "yandex_rtb_R-A-6817575-6"
-                        })
-                    })
-                </script>
-            </div>
-            <article class="uk-article">
-                <p class="uk-text-lead uk-margin-medium-bottom">5. Запускаем приложение</p>
-                <p class="uk-margin-small-bottom">5.1. Для этого создаём репозиторий на гитхабе</p>
-                <p>
-                    <p>
-                        Переходим по ссылке <a href="https://github.com/new">https://github.com/new</a>. Заполняем <i>Repository name</i> (это название Вашего репозитория), 
-                        ставим галочку на <i>Add a readme file</i> (она упростит клонирование репозитория) и нажимаем <i>Create repository</i>.
-                        В итоге Вы создали пустой репозиторий для запуска Вашего AR-приложения.
+                        Привет всем! Итак, начнём с установки необходимых инструментов или обозначения установленных, их заменяющих. 
                     </p>
                     <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/create_repository.jpg" alt="Создание репозитория">
-                        </div>
-                    </p>
-                </p>
-                <p class="uk-margin-small-bottom">5.2. Клонируем репозиторий на свой ПК</p>
-                <p>
-                    <p>
-                        Попав на страницу репозитория, жмём по зелёной кнопке <i>Code</i> и копируем значение из поля строки, кликнув по иконке сбоку.
+                        1.1. Нам понадобится любая среда разработки: VSCode, WebStorm или что-нибудь другое. 
                     </p>
                     <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/click_by_button_code.jpg" alt="Нажатие кнопки Code">
-                        </div>
+                        1.2. GIT - обязательно. И желательно Git Bash. Иначе придётся делать в командной строке.  Мне нравится Git Bash за удобство работы с GIT.
                     </p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/copy_url.jpg" alt="Копирование url">
-                        </div>
-                    </p>
-                </p>
-                <p>5.3. Теперь открываем диск С, ищем место, где будет лежать наш склонированный проект</p>
-                <p>
-                    <p>
-                        Если решили воспользоваться Git Bash, то кликаете в выбранном месте правой кнопкой, выбираете <i>Open Git Bash here</i>, запускаете. Если же остановились на командной строке, то, кликнув правой кнопкой мыши, выбираете <i>Открыть в терминале</i>.
-                    </p>
-                    <p>
-                        Вводите <code>git clone</code> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
-                    </p>
-                    <p>
-                        <u>* Открытый терминал не закрывайте!</u>
-                    </p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/open_gitbash.jpg" alt="Открытие Git Bash">
-                        </div>
-                    </p>
-                </p>
-                <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
-                    <!-- Yandex.RTB R-A-6817575-7 -->
-                    <div id="yandex_rtb_R-A-6817575-7"></div>
-                    <script>
-                        window.yaContextCb.push(()=>{
-                            Ya.Context.AdvManager.render({
-                                "blockId": "R-A-6817575-7",
-                                "renderTo": "yandex_rtb_R-A-6817575-7"
-                            })
-                        })
-                    </script>
-                </div>
-                <p>5.4. Теперь нужно залить наш index.html на GitHub</p>
-                <p class="mb-6">
-                    <p>
-                        Для этого вводим <u><b>cd</b> наименование Вашей склонированной папки</u>, в следствие чего Вы попадёте в склонированную папку. Затем бросаем в неё наш index.html.
-                    </p>
-                    <p>
-                        Теперь копируете в терминал следующие команды и нажимаете Enter:
-                    </p>
+                </article>
+                <article class="uk-article">
+                    <p class="uk-text-lead">2. Создаём стандартный html-файл</p>
                     <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                         <div class="uk-card-badge uk-background-default">
-                            <div onclick="copy('git_commands')" id="git_commands_icon" style="cursor: pointer;">
+                            <div onclick="copy('create_default_html')" id="create_default_html_icon" style="cursor: pointer;">
                                 <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="git_commands"></code>
+                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="create_default_html"></code>
                         </p>
                     </div>
                     <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/success_push.jpg" alt="Успешное сохранение проекта на GitHub`е">
-                        </div>
-                    </p>                
-                    <p class="uk-margin-small-bottom">
-                        Что они делают?
+                        <b>Attention!</b> Мы пишем <code>&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
+                            вместо <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
                     </p>
-                    <p class="uk-margin-small-bottom">
+                </article>
+                <article class="uk-article">
+                    <p class="uk-text-lead">3. Подключаем библиотеку AR.js</p>
+                    <p>Прописываем подключение в разделе body:</p>
+                    <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                        <div class="uk-card-badge uk-background-default">
+                            <div onclick="copy('connect_ar')" id="connect_ar_icon" style="cursor: pointer;">
+                                <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
+                            </div>
+                        </div>
+                        <p>
+                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="connect_ar"></code>
+                        </p>
+                    </div>
+                </article>
+                <article class="uk-article">
+                    <p class="uk-text-lead">4. Пишем AR-код</p>
+                    <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                        <div class="uk-card-badge uk-background-default">
+                            <div onclick="copy('writing_ar')" id="writing_ar_icon" style="cursor: pointer;">
+                                <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
+                            </div>
+                        </div>
+                        <p>
+                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="writing_ar"></code>
+                        </p>
+                    </div>
+                    <p>
+                        Что делает данный код?
+                    </p>
+                    <p>
+                        Во-первых, <code>a-scene</code> создаёт сцену
+                    </p>
+                    <p>
+                        Во-вторых, <code>a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code>preset="hiro"</code> позволяет программе понять - какой маркер ей искать
+                        Всё, что внутри - выводит нужное нам содержимое над маркеромю. У нас это текст
+                    </p>
+                    <p>
+                        Внимание! Я использовал <code>a-text</code> вместо <code>a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
+                    </p>
+                    <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                        <div class="uk-card-badge uk-background-default">
+                            <div onclick="copy('another_version_ar_text')" id="another_version_ar_text_icon" style="cursor: pointer;">
+                                <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
+                            </div>
+                        </div>
+                        <p>
+                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="another_version_ar_text"></code>
+                        </p>
+                    </div>
+                    <p>
+                        <b>Примечание</b>. Что такое <code>a-entity text ...</code> и откуда я взял <code>a-text</code> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
+                    </p>
+                    <p>
+                        В итоге получился следующий код нашего первого AR-приложения:
+                    </p>
+                    <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                        <div class="uk-card-badge uk-background-default">
+                            <div onclick="copy('final_code')" id="final_code_icon" style="cursor: pointer;">
+                                <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
+                            </div>
+                        </div>
+                        <p>
+                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="final_code"></code>
+                        </p>
+                    </div>
+                </article>
+                <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
+                    <!-- Yandex.RTB R-A-6817575-6 -->
+                    <div id="yandex_rtb_R-A-6817575-6"></div>
+                    <script>
+                        window.yaContextCb.push(()=>{
+                            Ya.Context.AdvManager.render({
+                                "blockId": "R-A-6817575-6",
+                                "renderTo": "yandex_rtb_R-A-6817575-6"
+                            })
+                        })
+                    </script>
+                </div>
+                <article class="uk-article">
+                    <p class="uk-text-lead uk-margin-medium-bottom">5. Запускаем приложение</p>
+                    <p class="uk-margin-small-bottom">5.1. Для этого создаём репозиторий на гитхабе</p>
+                    <p>
+                        <p>
+                            Переходим по ссылке <a href="https://github.com/new">https://github.com/new</a>. Заполняем <i>Repository name</i> (это название Вашего репозитория), 
+                            ставим галочку на <i>Add a readme file</i> (она упростит клонирование репозитория) и нажимаем <i>Create repository</i>.
+                            В итоге Вы создали пустой репозиторий для запуска Вашего AR-приложения.
+                        </p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/create_repository.jpg" alt="Создание репозитория">
+                            </div>
+                        </p>
+                    </p>
+                    <p class="uk-margin-small-bottom">5.2. Клонируем репозиторий на свой ПК</p>
+                    <p>
+                        <p>
+                            Попав на страницу репозитория, жмём по зелёной кнопке <i>Code</i> и копируем значение из поля строки, кликнув по иконке сбоку.
+                        </p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/click_by_button_code.jpg" alt="Нажатие кнопки Code">
+                            </div>
+                        </p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/copy_url.jpg" alt="Копирование url">
+                            </div>
+                        </p>
+                    </p>
+                    <p>5.3. Теперь открываем диск С, ищем место, где будет лежать наш склонированный проект</p>
+                    <p>
+                        <p>
+                            Если решили воспользоваться Git Bash, то кликаете в выбранном месте правой кнопкой, выбираете <i>Open Git Bash here</i>, запускаете. Если же остановились на командной строке, то, кликнув правой кнопкой мыши, выбираете <i>Открыть в терминале</i>.
+                        </p>
+                        <p>
+                            Вводите <code>git clone</code> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
+                        </p>
+                        <p>
+                            <u>* Открытый терминал не закрывайте!</u>
+                        </p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/open_gitbash.jpg" alt="Открытие Git Bash">
+                            </div>
+                        </p>
+                    </p>
+                    <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
+                        <!-- Yandex.RTB R-A-6817575-7 -->
+                        <div id="yandex_rtb_R-A-6817575-7"></div>
+                        <script>
+                            window.yaContextCb.push(()=>{
+                                Ya.Context.AdvManager.render({
+                                    "blockId": "R-A-6817575-7",
+                                    "renderTo": "yandex_rtb_R-A-6817575-7"
+                                })
+                            })
+                        </script>
+                    </div>
+                    <p>5.4. Теперь нужно залить наш index.html на GitHub</p>
+                    <p class="mb-6">
+                        <p>
+                            Для этого вводим <u><b>cd</b> наименование Вашей склонированной папки</u>, в следствие чего Вы попадёте в склонированную папку. Затем бросаем в неё наш index.html.
+                        </p>
+                        <p>
+                            Теперь копируете в терминал следующие команды и нажимаете Enter:
+                        </p>
+                        <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                            <div class="uk-card-badge uk-background-default">
+                                <div onclick="copy('git_commands')" id="git_commands_icon" style="cursor: pointer;">
+                                    <img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon">
+                                </div>
+                            </div>
+                            <p>
+                                <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="git_commands"></code>
+                            </p>
+                        </div>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/success_push.jpg" alt="Успешное сохранение проекта на GitHub`е">
+                            </div>
+                        </p>                
+                        <p class="uk-margin-small-bottom">
+                            Что они делают?
+                        </p>
+                        <p class="uk-margin-small-bottom">
+                            <ul>
+                                <li>
+                                    а) <code>git add --all</code> добавляет все изменения в отслеживаемые
+                                </li>
+                                <li>
+                                    б) <code>git commit -m "my first commit"</code> сохраняет теперь уже отслеживаемые изменения
+                                </li>
+                                <li>
+                                    в) <code>git push</code> отправляет (сохраняет) изменения (наш код) на GitHub 
+                                </li>
+                            </ul>
+                        </p>
+                        <p class="uk-margin-small-bottom">
+                            Ура! Наш код сохранён. И мы его не потеряем в случае утраты компьютера. 
+                        </p>
+                    </p>
+                    <p class="uk-margin-small-bottom">5.5. Теперь запускаем наш проект, включив GitHub Pages</p>
+                    <p>
+                        <p>Для этого:</p>
+                        <p>а) Заходим в настройки проекта</p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/opening_project_settings.jpg" alt="Открытие настроек проекта">
+                            </div>
+                        </p>
+                        <p>б) Открываем в левом блоке вкладку Pages</p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/opening_pages_tab.jpg" alt="Открытие вкладки Pages">
+                            </div>
+                        </p>
+                        <p>в) Меняем branch с none на main и нажимаем save</p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="pictures/changing_GitHub_Pages_parameters.jpg" alt="Изменение параметров GitHub Pages">
+                            </div>
+                        </p>
+                    </p>
+                </article>
+                <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
+                    <!-- Yandex.RTB R-A-6817575-8 -->
+                    <div id="yandex_rtb_R-A-6817575-8"></div>
+                    <script>
+                        window.yaContextCb.push(()=>{
+                            Ya.Context.AdvManager.render({
+                                "blockId": "R-A-6817575-8",
+                                "renderTo": "yandex_rtb_R-A-6817575-8"
+                            })
+                        })
+                    </script>
+                </div>
+                <article class="uk-article">
+                    <p class="uk-text-lead uk-margin-medium-bottom">6. Наслаждаемся результатом</p>
+                    <p>
+                        <p>
+                            6.1. Cоздаём адрес в соответствие с шаблоном <u>https://<b>Ваш ник на GitHub</b>.github.io/<b>наименование Вашего репозитория</b></u>. Например, у меня получился <i>https://mianger22.github.io/ar_guide</i>.
+                        </p>
+                        <p>
+                            Сохраняем данный адрес, заливаем его в мессенджер, используемый Вами. Например, в Телеграмм. 
+                        </p>
+                        <p>
+                            6.2. Заходим по нему с телефона. Вуаля! <b>Наше приложение запущено!</b> тут анимация или смайл
+                        </p>
+                        <p class="uk-margin-medium-bottom">
+                            6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <code>a-marker preset="hiro"</code> - маркер по умолчанию)
+                        </p>
+                        <p>
+                            <div class="flex items-center justify-center my-6">
+                                <img src="https://leonardo.osnova.io/af634cb0-038a-5245-8169-385adf3fb9ad/-/preview/1000/-/format/webp/" alt="AR-метка">
+                            </div>
+                        </p>
+                        <p class="uk-margin-medium-top">
+                            Наводим так, чтобы он уместился весь на экране и был как можно более параллелен смартфону. Ждём, пока наша программа проанализирует. В итоге у нас должен появиться текст <i>My first AR application</i> над маркером. Отдаляя камеру, Вы сможете прочитать его целиком 😏
+                        </p>
+                        <p>
+                            Если получилось, поздравляю Вас с первой AR - программой. 🎉
+                        </p>
+                        <p class="uk-margin-medium-top">
+                            Всё просто.
+                        </p>
+                    </p>
+                </article>
+            </section>
+            <section>
+                <h2>
+                    Но если Вы до конца не разобрались...
+                </h2>
+                <article class="uk-article uk-margin-large-bottom">
+                    <p class="uk-text-lead">Список рекомендуемых к прочтению источников об AR.js и WebAR</p>
+                    <p class="uk-article-meta uk-margin-small-top uk-margin-medium-bottom">Все они были использованы мною для создания своего первого работающего приложения на AR и написания данной статьи</p>
+                    <p>
                         <ul>
                             <li>
-                                а) <code>git add --all</code> добавляет все изменения в отслеживаемые
+                                1. <a rel="external nofollow" href="https://clck.ru/39cTRL">Статья и видео от Гоши Дударя</a>
                             </li>
                             <li>
-                                б) <code>git commit -m "my first commit"</code> сохраняет теперь уже отслеживаемые изменения
+                                2. <a rel="external nofollow" href="https://clck.ru/39dSBn">Документация AR.js</a>
                             </li>
                             <li>
-                                в) <code>git push</code> отправляет (сохраняет) изменения (наш код) на GitHub 
+                                3. <a rel="external nofollow" href="https://clck.ru/39dXBK">Англоязычная статья с большей информацией про возможности AR.js</a>
+                            </li>
+                            <li>
+                                4. <a rel="external nofollow" href="https://clck.ru/39dXgK">Ещё немного об AR.js и WebAR</a>
+                            </li>
+                            <li>
+                                5. <a rel="external nofollow" href="https://clck.ru/39dXmU">И напоследок, если что-то до сих пор непонятно</a>
                             </li>
                         </ul>
                     </p>
-                    <p class="uk-margin-small-bottom">
-                        Ура! Наш код сохранён. И мы его не потеряем в случае утраты компьютера. 
-                    </p>
-                </p>
-                <p class="uk-margin-small-bottom">5.5. Теперь запускаем наш проект, включив GitHub Pages</p>
-                <p>
-                    <p>Для этого:</p>
-                    <p>а) Заходим в настройки проекта</p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/opening_project_settings.jpg" alt="Открытие настроек проекта">
-                        </div>
-                    </p>
-                    <p>б) Открываем в левом блоке вкладку Pages</p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/opening_pages_tab.jpg" alt="Открытие вкладки Pages">
-                        </div>
-                    </p>
-                    <p>в) Меняем branch с none на main и нажимаем save</p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="pictures/changing_GitHub_Pages_parameters.jpg" alt="Изменение параметров GitHub Pages">
-                        </div>
-                    </p>
-                </p>
-            </article>
-            <div class="uk-margin-medium-top uk-margin-medium-bottom" style="overflow-x:hidden;">
-                <!-- Yandex.RTB R-A-6817575-8 -->
-                <div id="yandex_rtb_R-A-6817575-8"></div>
-                <script>
-                    window.yaContextCb.push(()=>{
-                        Ya.Context.AdvManager.render({
-                            "blockId": "R-A-6817575-8",
-                            "renderTo": "yandex_rtb_R-A-6817575-8"
-                        })
-                    })
-                </script>
-            </div>
-            <article class="uk-article">
-                <p class="uk-text-lead uk-margin-medium-bottom">6. Наслаждаемся результатом</p>
-                <p>
-                    <p>
-                        6.1. Cоздаём адрес в соответствие с шаблоном <u>https://<b>Ваш ник на GitHub</b>.github.io/<b>наименование Вашего репозитория</b></u>. Например, у меня получился <i>https://mianger22.github.io/ar_guide</i>.
-                    </p>
-                    <p>
-                        Сохраняем данный адрес, заливаем его в мессенджер, используемый Вами. Например, в Телеграмм. 
-                    </p>
-                    <p>
-                        6.2. Заходим по нему с телефона. Вуаля! <b>Наше приложение запущено!</b> тут анимация или смайл
-                    </p>
-                    <p class="uk-margin-medium-bottom">
-                        6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <code>a-marker preset="hiro"</code> - маркер по умолчанию)
-                    </p>
-                    <p>
-                        <div class="flex items-center justify-center my-6">
-                            <img src="https://leonardo.osnova.io/af634cb0-038a-5245-8169-385adf3fb9ad/-/preview/1000/-/format/webp/" alt="AR-метка">
-                        </div>
-                    </p>
-                    <p class="uk-margin-medium-top">
-                        Наводим так, чтобы он уместился весь на экране и был как можно более параллелен смартфону. Ждём, пока наша программа проанализирует. В итоге у нас должен появиться текст <i>My first AR application</i> над маркером. Отдаляя камеру, Вы сможете прочитать его целиком 😏
-                    </p>
-                    <p>
-                        Если получилось, поздравляю Вас с первой AR - программой. 🎉
-                    </p>
-                    <p class="uk-margin-medium-top">
-                        Всё просто.
-                    </p>
-                </p>
-            </article>
-            <article class="uk-article uk-margin-large-bottom">
-                <p class="uk-text-lead">Список рекомендуемых к прочтению источников об AR.js и WebAR</p>
-                <p class="uk-article-meta uk-margin-small-top uk-margin-medium-bottom">Все они были использованы мною для создания своего первого работающего приложения на AR и написания данной статьи</p>
-                <p>
-                    <ul>
-                        <li>
-                            1. <a rel="external nofollow" href="https://clck.ru/39cTRL">Статья и видео от Гоши Дударя</a>
-                        </li>
-                        <li>
-                            2. <a rel="external nofollow" href="https://clck.ru/39dSBn">Документация AR.js</a>
-                        </li>
-                        <li>
-                            3. <a rel="external nofollow" href="https://clck.ru/39dXBK">Англоязычная статья с большей информацией про возможности AR.js</a>
-                        </li>
-                        <li>
-                            4. <a rel="external nofollow" href="https://clck.ru/39dXgK">Ещё немного об AR.js и WebAR</a>
-                        </li>
-                        <li>
-                            5. <a rel="external nofollow" href="https://clck.ru/39dXmU">И напоследок, если что-то до сих пор непонятно</a>
-                        </li>
-                    </ul>
-                </p>
-            </article>
-            <div>
-                <!-- connecting to a third-party commenting library -->
-                <div id="sigCommentsBlock"></div>
-                <a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
-                <script type="text/javascript">
-                    (function(){
-                        var host_id = '7272';
-                        var script = document.createElement('script');
-                        script.type = 'text/javascript';
-                        script.async = true;
-                        script.src = '//sigcomments.com/chat/?host_id='+host_id;
-                        var ss = document.getElementsByTagName('script')[0]; 
-                        ss.parentNode.insertBefore(script, ss);
-                    })();
-                </script>
-            </div>
+                </article>
+            </section>
+            <section>
+                <h2>
+                    Или можно спросить здесь
+                </h2>
+                <div>
+                    <!-- connecting to a third-party commenting library -->
+                    <div id="sigCommentsBlock"></div>
+                    <a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
+                    <script type="text/javascript">
+                        (function(){
+                            var host_id = '7272';
+                            var script = document.createElement('script');
+                            script.type = 'text/javascript';
+                            script.async = true;
+                            script.src = '//sigcomments.com/chat/?host_id='+host_id;
+                            var ss = document.getElementsByTagName('script')[0]; 
+                            ss.parentNode.insertBefore(script, ss);
+                        })();
+                    </script>
+                </div>
+            </section>
         </main>
         <aside class="uk-margin-medium-top">
             <div>

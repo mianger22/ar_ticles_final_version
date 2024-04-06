@@ -19,6 +19,7 @@
     <meta property="og:type" content="article">
     <title>Первое приложение на AR.js</title>
     <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="index.css">
     <!-- UiKit connection -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
@@ -67,12 +68,12 @@
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="create_default_html"></code>
+                            <code class="area_code" id="create_default_html"></code>
                         </p>
                     </div>
                     <p>
-                        <span class="uk-text-warning">Attention!</span> Мы пишем <code style="word-break: break-all;">&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
-                            вместо <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
+                        <span class="uk-text-warning">Attention!</span> Мы пишем <code class="area_code">&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
+                            вместо <code class="area_code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
                     </p>
                 </article>
                 <article class="uk-article">
@@ -85,7 +86,7 @@
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="connect_ar"></code>
+                            <code class="area_code" id="connect_ar"></code>
                         </p>
                     </div>
                 </article>
@@ -98,21 +99,21 @@
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="writing_ar"></code>
+                            <code class="area_code" id="writing_ar"></code>
                         </p>
                     </div>
                     <p>
                         Что делает данный код?
                     </p>
                     <p>
-                        Во-первых, <code>a-scene</code> создаёт сцену
+                        Во-первых, <code class="area_code">a-scene</code> создаёт сцену
                     </p>
                     <p>
-                        Во-вторых, <code>a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code>preset="hiro"</code> позволяет программе понять - какой маркер ей искать
+                        Во-вторых, <code class="area_code">a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code class="area_code">preset="hiro"</code> позволяет программе понять - какой маркер ей искать
                         Всё, что внутри - выводит нужное нам содержимое над маркеромю. У нас это текст
                     </p>
                     <p>
-                        Внимание! Я использовал <code>a-text</code> вместо <code>a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
+                        Внимание! Я использовал <code class="area_code">a-text</code> вместо <code class="area_code">a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
                     </p>
                     <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                         <div class="uk-card-badge uk-background-default">
@@ -121,11 +122,11 @@
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="another_version_ar_text"></code>
+                            <code class="area_code" id="another_version_ar_text"></code>
                         </p>
                     </div>
                     <p>
-                        <span class="uk-text-secondary">Примечание</span>. Что такое <code>a-entity text ...</code> и откуда я взял <code>a-text</code> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
+                        <span class="uk-text-secondary">Примечание</span>. Что такое <code class="area_code">a-entity text ...</code> и откуда я взял <code class="area_code">a-text</code> читайте <a rel="external nofollow" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
                     </p>
                     <p>
                         В итоге получился следующий код нашего первого AR-приложения:
@@ -137,7 +138,7 @@
                             </div>
                         </div>
                         <p>
-                            <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="final_code"></code>
+                            <code class="area_code" id="final_code"></code>
                         </p>
                     </div>
                 </article>
@@ -190,7 +191,7 @@
                             Если решили воспользоваться Git Bash, то кликаете в выбранном месте правой кнопкой, выбираете <span class="uk-text-secondary">Open Git Bash here</span>, запускаете. Если же остановились на командной строке, то, кликнув правой кнопкой мыши, выбираете <span class="uk-text-secondary">Открыть в терминале</span>.
                         </p>
                         <p>
-                            Вводите <code>git clone</code> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
+                            Вводите <code class="area_code">git clone</code> и нажимаете комбинацию Shift+Insert, чтобы вставилась скопированная строка с github`a, затем - Enter.
                         </p>
                         <p>
                             <u>* Открытый терминал не закрывайте!</u>
@@ -216,7 +217,7 @@
                     <p>5.4. Теперь нужно залить наш index.html на GitHub</p>
                     <p class="mb-6">
                         <p>
-                            Для этого вводим <code>cd наименование Вашей склонированной папки</code>, в следствие чего Вы попадёте в склонированную папку. Затем бросаем в неё наш index.html.
+                            Для этого вводим <code class="area_code">cd наименование Вашей склонированной папки</code>, в следствие чего Вы попадёте в склонированную папку. Затем бросаем в неё наш index.html.
                         </p>
                         <p>
                             Теперь копируете в терминал следующие команды и нажимаете Enter:
@@ -228,7 +229,7 @@
                                 </div>
                             </div>
                             <p>
-                                <code style="white-space: pre-line; word-break: break-all; background-color: white;" id="git_commands"></code>
+                                <code class="area_code" id="git_commands"></code>
                             </p>
                         </div>
                         <p>
@@ -242,13 +243,13 @@
                         <p class="uk-margin-small-bottom">
                             <ul>
                                 <li>
-                                    а) <code>git add --all</code> добавляет все изменения в отслеживаемые
+                                    а) <code class="area_code">git add --all</code> добавляет все изменения в отслеживаемые
                                 </li>
                                 <li>
-                                    б) <code>git commit -m "my first commit"</code> сохраняет теперь уже отслеживаемые изменения
+                                    б) <code class="area_code">git commit -m "my first commit"</code> сохраняет теперь уже отслеживаемые изменения
                                 </li>
                                 <li>
-                                    в) <code>git push</code> отправляет (сохраняет) изменения (наш код) на GitHub 
+                                    в) <code class="area_code">git push</code> отправляет (сохраняет) изменения (наш код) на GitHub 
                                 </li>
                             </ul>
                         </p>
@@ -304,7 +305,7 @@
                             6.2. Заходим по нему с телефона. Ура-а-а! <span class="uk-text-success">Наше приложение запущено!</span> тут анимация или смайл
                         </p>
                         <p class="uk-margin-medium-bottom">
-                            6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <code>a-marker preset="hiro"</code> - маркер по умолчанию)
+                            6.3. Теперь наводим камерой на следующий маркер (мы его указывали в коде тегом <code class="area_code">a-marker preset="hiro"</code> - маркер по умолчанию)
                         </p>
                         <p>
                             <div class="flex items-center justify-center my-6">
@@ -488,6 +489,6 @@
             Ustinnov Corp 2024
         </div>
     </footer>
-    <script src="first_ar_app.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

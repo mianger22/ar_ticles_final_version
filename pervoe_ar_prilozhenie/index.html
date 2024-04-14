@@ -43,7 +43,7 @@
 <body>
     <header>
         <div class="uk-margin-medium-left uk-margin-medium-top">
-            <h1>AR.js уроки: помощь в WebAR-технологии</h1> 
+            <p class="uk-text-lead">AR.js уроки: помощь в WebAR-технологии</p> 
         </div>
     </header>
     <div class="uk-child-width-expand" uk-grid>
@@ -52,9 +52,9 @@
                 <section>
                     <header>
                         <div class="uk-margin-medium-bottom">
-                            <h2>
+                            <h1>
                                 Как создать первую программу на AR.js
-                            </h2> 
+                            </h1> 
                         </div>   
                         <!-- <p>
                             <img src="../common_pictures/illustrations/pervoe_ar_prilozhenie.png" alt="AR illustration">
@@ -63,13 +63,13 @@
                     <section>
                         <header>
                             <div class="uk-margin-medium-bottom">
-                                <h3>
+                                <h2>
                                     Инструкция
-                                </h3>
+                                </h2>
                             </div>
                         </header>
                         <div class="uk-article">
-                            <p class="uk-text-lead">1. Устанавливаем необходимые инструменты</p>
+                            <p class="uk-text-bold">1. Устанавливаем необходимые инструменты</p>
                             <p>
                                 Привет всем! Итак, начнём с установки необходимых инструментов или обозначения установленных, их заменяющих. 
                             </p>
@@ -81,7 +81,7 @@
                             </p>
                         </div>
                         <div class="uk-article">
-                            <p class="uk-text-lead">2. Создаем стандартный html-файл</p>
+                            <p class="uk-text-bold">2. Создаем стандартный html-файл</p>
                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                 <div class="uk-card-badge uk-background-default">
                                     <div onclick="copy('create_default_html')" id="create_default_html_icon" style="cursor: pointer;">
@@ -98,7 +98,7 @@
                             </p>
                         </div>
                         <div class="uk-article">
-                            <p class="uk-text-lead">3. Подключаем библиотеку AR.js</p>
+                            <p class="uk-text-bold">3. Подключаем библиотеку AR.js</p>
                             <p>Прописываем подключение в разделе body:</p>
                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                 <div class="uk-card-badge uk-background-default">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="uk-article">
-                            <p class="uk-text-lead">4. Пишем AR-код</p>
+                            <p class="uk-text-bold">4. Пишем AR-код</p>
                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                 <div class="uk-card-badge uk-background-default">
                                     <div onclick="copy('writing_ar')" id="writing_ar_icon" style="cursor: pointer;">
@@ -178,7 +178,7 @@
                             </div>
                         </article>
                         <div class="uk-article">
-                            <p class="uk-text-lead uk-margin-medium-bottom">5. Запускаем приложение</p>
+                            <p class="uk-text-bold uk-margin-medium-bottom">5. Запускаем приложение</p>
                             <p class="uk-margin-small-bottom">5.1. Для этого создаём репозиторий на гитхабе</p>
                             <p>
                                 <p>
@@ -320,7 +320,7 @@
                             </div>
                         </article>
                         <div class="uk-article">
-                            <p class="uk-text-lead uk-margin-medium-bottom">6. Наслаждаемся результатом</p>
+                            <p class="uk-text-bold uk-margin-medium-bottom">6. Наслаждаемся результатом</p>
                             <p>
                                 <p>
                                     6.1. Cоздаём адрес в соответствие с шаблоном <span class="uk-text-secondary">https://Ваш ник на GitHub.github.io/наименование Вашего репозитория</span>. Например, у меня получился <span class="uk-text-secondary">https://mianger22.github.io/ar_guide</span>.
@@ -352,9 +352,9 @@
                         <div class="uk-article">
                             <header>
                                 <div class="uk-margin-medium-bottom">
-                                    <h3>
+                                    <h2>
                                         Что почитать
-                                    </h3>
+                                    </h2>
                                 </div>
                             </header>
                             <p class="uk-margin-large-bottom">
@@ -385,28 +385,30 @@
                 </section>
             </main>
             <article>
-                <header>
-                    <div class="uk-margin-medium-bottom">
-                        <h3>
-                            Помощь
-                        </h3>
-                    </div>
-                </header>
-                <div>
-                    <!-- connecting to a third-party commenting library -->
-                    <div id="sigCommentsBlock"></div>
-                    <a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
-                    <script type="text/javascript">
-                        (function(){
-                            var host_id = '7272';
-                            var script = document.createElement('script');
-                            script.type = 'text/javascript';
-                            script.async = true;
-                            script.src = '//sigcomments.com/chat/?host_id='+host_id;
-                            var ss = document.getElementsByTagName('script')[0]; 
-                            ss.parentNode.insertBefore(script, ss);
-                        })();
-                    </script>
+                <div class="uk-article">
+                    <header>
+                        <div class="uk-margin-medium-bottom">
+                            <h2>
+                                Помощь
+                            </h2>
+                        </div>
+                    </header>
+                    <p>
+                        <!-- connecting to a third-party commenting library -->
+                        <div id="sigCommentsBlock"></div>
+                        <a href="http://sigcomments.com" style="font-size: 0.6em;">Система комментирования SigComments</a>
+                        <script type="text/javascript">
+                            (function(){
+                                var host_id = '7272';
+                                var script = document.createElement('script');
+                                script.type = 'text/javascript';
+                                script.async = true;
+                                script.src = '//sigcomments.com/chat/?host_id='+host_id;
+                                var ss = document.getElementsByTagName('script')[0]; 
+                                ss.parentNode.insertBefore(script, ss);
+                            })();
+                        </script>
+                    </p>
                 </div>
             </article>
         </div>

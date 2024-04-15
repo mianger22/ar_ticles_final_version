@@ -15,3 +15,10 @@ kbd {
     box-shadow: inset -1px -1px 0 rgba(0,0,0,.25);
     background-color: #f8f8f8;
 }
+
+.copy_icon {
+    cursor: pointer;
+    width: 20px; 
+    height: 20px; 
+    background-image: url("https://img.icons8.com/ios/50/copy--v1.png");
+}

@@ -20,6 +20,11 @@ button a {
     color: white;
 }
 
+button a:hover {
+    text-decoration: none;
+    color: white;
+}
+
 .copy_icon {
     cursor: pointer;
     width: 20px; 

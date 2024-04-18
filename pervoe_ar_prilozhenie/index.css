@@ -16,6 +16,10 @@ kbd {
     background-color: #f8f8f8;
 }
 
+button a {
+    color: white;
+}
+
 .copy_icon {
     cursor: pointer;
     width: 20px; 

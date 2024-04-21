@@ -25,6 +25,10 @@ button a:hover {
     color: white;
 }
 
+picture image {
+    border: dotted 1px black; 
+}
+
 .copy_icon {
     cursor: pointer;
     width: 20px; 

@@ -4,3 +4,4 @@ const myText = 'Добро пожаловать в совершенно новы
 const upperCaseText = toUpperCase(myText);
 
 console.log(upperCaseText);
+console.log(upperCaseText);

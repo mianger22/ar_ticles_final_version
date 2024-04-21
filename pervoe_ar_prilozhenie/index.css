@@ -27,6 +27,7 @@ button a:hover {
 
 picture img {
     border: dotted 1px black; 
+    transform: scale(0.93);
 }
 
 .copy_icon {

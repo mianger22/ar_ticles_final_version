@@ -41,5 +41,5 @@ picture img {
     cursor: pointer;
     width: 20px; 
     height: 20px; 
-    background-image: url("https://img.icons8.com/ios/50/copy--v1.png");
+    background-image: url("../common/pictures/icons/copy_icon.png");
 }

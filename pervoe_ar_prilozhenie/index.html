@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- <script src="https://unpkg.com/website_security@latest"></script>  -->
     <!-- Enabling site copy protection -->
+    <script src="https://unpkg.com/website_security@latest"></script> 
     <base href="https://ustinnovcorpgames.ru/pervoe_ar_prilozhenie/" target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="В этом уроке мы простым способом напишем своё первое web-приложение на AR.js">
-    <meta name="author" content="Устинов Дмитрий Сергеевич -> ustinnov.ru">
+    <meta name="author" content="Устинов Дмитрий Сергеевич | moyustimov@vk.com | ustinnov.ru">
     <meta http-equiv="content-language" content="ru">
     <meta property="og:title" content="Создаём своё первое приложение на AR.js">
-    <meta property="og:image" content="common_pictures/illustrations/pervoe_ar_prilozhenie.png">
+    <meta property="og:image" content="../common/pictures/illustrations/pervoe_ar_prilozhenie.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:description" content="Простой русскоязычный урок по WebAR-разработке">
     <meta property="og:url" content= "https://ustinnovcorpgames.ru/pervoe_ar_prilozhenie/">
     <meta property="og:type" content="article">
     <title>Первое приложение на AR.js</title>
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../common/pictures/icons/favicon.ico">
     <link rel="stylesheet" href="index.css">
+
     <!-- UiKit connection -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/css/uikit.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.2/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="../common/uikit/css/uikit.min.css">
+    
+    <!-- js вообще наверное нет
+    <script src="../common/uikit/js/uikit.min.js"></script>
+    <script src="../common/uikit/js/uikit-icons.min.js"></script> -->
+
     <!-- Yandex.RTB -->
     <script>window.yaContextCb=window.yaContextCb||[]</script>
     <script src="https://yandex.ru/ads/system/context.js" async></script>
@@ -56,11 +60,11 @@
                                     Как создать первую программу на AR.js
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 21 апреля 2024 года
+                                    Обновлено 10 мая 2024 года
                                 </p>
                             </div> 
                             <!-- <p>
-                                <img src="../common_pictures/illustrations/pervoe_ar_prilozhenie.png" alt="AR illustration" loading="lazy">
+                                <img src="../common/pictures/illustrations/pervoe_ar_prilozhenie.png" alt="AR illustration" loading="lazy">
                             </p> -->
                         </header>
                         <section>
@@ -84,7 +88,7 @@
                                 </p>
                             </div>
                             <div class="uk-article">
-                                <p class="uk-text-bold">2. Создаем стандартный html-файл</p>
+                                <p class="uk-text-bold">2. Создаём стандартный html-файл</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
                                         <div onclick="copy('create_default_html')" id="create_default_html_icon">
@@ -347,8 +351,8 @@
                                     </p>
                                     <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom">
                                         <picture>
-                                            <source type="image/webp" srcset="../common_pictures/webp_versions/ar_marker.webp">
-                                            <img src="../common_pictures/ar_marker.jpg" alt="AR-метка" loading="lazy">
+                                            <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp">
+                                            <img src="../common/pictures/markers/ar_marker.jpg" alt="AR-метка" loading="lazy">
                                         </picture>
                                     </div>
                                     <p>

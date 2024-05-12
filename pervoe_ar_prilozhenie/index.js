@@ -1,5 +1,35 @@
-// общее
-const Codes = {
+
+// ---------------------------------------------- затемнение ссылки в меню ссылок, если она активна --------------
+
+(function mute_link_active() {
+    const link = document.getElementById("pervoe_ar_prilozhenie");
+
+    if (window.location.pathname === "/pervoe_ar_prilozhenie/index.html") {
+        link.style.color = "gray";
+        link.style.textDecoration = "none";
+        link.disabled = true;
+    }
+})();
+
+// -------------------------------------------- стартовое заполнение блоков кодом --------------------------------
+
+(function filling_div_blocks() {
+    document.getElementById("create_default_html").textContent = create_default_html_code;
+    document.getElementById("connect_ar").textContent = connect_ar_code;
+    document.getElementById("writing_ar").textContent = writing_ar_code;
+    document.getElementById("another_version_ar_text").textContent = another_version_ar_text_code;
+    document.getElementById("final_code").textContent = final_code;
+    document.getElementById("git_commands").textContent = git_commands_code;
+})();
+
+const create_default_html_code = codes.head_code + codes.end_code;
+const connect_ar_code = codes.head_code + codes.connect_AR + codes.end_code;
+const writing_ar_code = codes.body_AR;
+const another_version_ar_text_code = codes.another_version_ar_text;
+const final_code = codes.head_code + codes.connect_AR + codes.body_AR + codes.end_code;
+const git_commands_code = codes.git_commands;
+
+const codes = {
     "head_code": `<!DOCTYPE html>
         <html lang="ru">
             \u00a0\u00a0\u00a0<head>
@@ -41,77 +71,47 @@ const Codes = {
     "another_version_ar_text": `<a-entity text="value: My first AR application"></a-entity>`
 }
 
-// Ставим иконки
-document.querySelectorAll('.copy_icon').forEach(icon => {
-    icon.src = "../common/pictures/icons/copy_icon.png"; 
-});
+// ---------------------- добавляем значок иконки копирования всем иконкам копирования -----------------------------
 
-const create_default_html_code = Codes.head_code + Codes.end_code;
-const connect_ar_code = Codes.head_code + Codes.connect_AR + Codes.end_code;
-const writing_ar_code = Codes.body_AR;
-const another_version_ar_text_code = Codes.another_version_ar_text;
-const final_code = Codes.head_code + Codes.connect_AR + Codes.body_AR + Codes.end_code;
-const git_commands_code = Codes.git_commands;
+Array.from(document.querySelectorAll('.copy_icon')).forEach(icon => icon.src = "../common/pictures/icons/copy_icon.png");
 
-const copy_icon = `<img width="20" height="20" src="https://img.icons8.com/ios/50/copy--v1.png" alt="copy icon" />`;
-const success_copy_icon = `<img width="32" height="32" src="https://img.icons8.com/fluency/48/ok--v1.png" alt="success copied icon"/>`;
+// ------------------------------------------- копирование пользователем кода -------------------------------------
 
-function common_copy_function(code, id_icon) {
-    // копируем код
-    navigator.clipboard.writeText(code);
-    // меняем иконку копирования на иконку успеха
-    document.getElementById(id_icon).innerHTML = success_copy_icon;
-    // возвращаем иконку копирования
-    setTimeout(() => {
-        document.getElementById(id_icon).innerHTML = copy_icon;
-    }, 3000);
-}
-
-// стартовое заполнение блоков кодом 
-function filling_divs() {
-    document.getElementById("create_default_html").textContent = create_default_html_code;
-    document.getElementById("connect_ar").textContent = connect_ar_code;
-    document.getElementById("writing_ar").textContent = writing_ar_code;
-    document.getElementById("another_version_ar_text").textContent = another_version_ar_text_code;
-    document.getElementById("final_code").textContent = final_code;
-    document.getElementById("git_commands").textContent = git_commands_code;
-}
-
-filling_divs();
-
-// копирование пользователем кода
 function copy(id) {
     switch (id) {
         case "create_default_html":
-            common_copy_function(create_default_html_code, "create_default_html_icon");
+            click_copy_handler(create_default_html_code, "create_default_html_icon");
             break;
         case "connect_ar":
-            common_copy_function(connect_ar_code, "connect_ar_icon");
+            click_copy_handler(connect_ar_code, "connect_ar_icon");
             break;
         case "writing_ar": 
-            common_copy_function(writing_ar_code, "writing_ar_icon");
+            click_copy_handler(writing_ar_code, "writing_ar_icon");
             break;
         case "another_version_ar_text": 
-            common_copy_function(another_version_ar_text_code, "another_version_ar_text_icon");
+            click_copy_handler(another_version_ar_text_code, "another_version_ar_text_icon");
             break;
         case "final_code": 
-            common_copy_function(final_code, "final_code_icon");
+            click_copy_handler(final_code, "final_code_icon");
             break;
         case "git_commands": 
-            common_copy_function(git_commands_code, "git_commands_icon");
+            click_copy_handler(git_commands_code, "git_commands_icon");
             break;
     }
 }
 
-// затемнение ссылки в меню ссылок, если она активна
-function muteLinkActive() {
-    let link = document.getElementById("pervoe_ar_prilozhenie");
+function click_copy_handler(code, id_icon) {
+    // копируем код
+    navigator.clipboard.writeText(code);
+    // меняем иконку копирования на иконку успеха
+    document.getElementById(id_icon).innerHTML = successful_copy_icon;
+    // возвращаем иконку копирования
+    // setTimeout(() => {
+    //     document.getElementById(id_icon).innerHTML = copy_icon;
+    // }, 3000);
 
-    if (window.location.pathname === "/pervoe_ar_prilozhenie/index.html") {
-        link.style.color = "gray";
-        link.style.textDecoration = "none";
-        link.disabled = true;
-    }
+    setTimeout(() => document.getElementById(id_icon).innerHTML = copy_icon, 3000);
 }
 
-muteLinkActive();
+const copy_icon = `<img alt="copy icon" class="copy_icon" src="../common/pictures/icons/copy_icon.png">`;
+const successful_copy_icon = `<img alt="successful copy icon" class="success_icon" src="../common/pictures/icons/success_icon.png">`;

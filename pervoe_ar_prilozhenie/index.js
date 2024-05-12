@@ -1,33 +1,5 @@
 
-// ---------------------------------------------- затемнение ссылки в меню ссылок, если она активна --------------
-
-(function mute_link_active() {
-    const link = document.getElementById("pervoe_ar_prilozhenie");
-
-    if (window.location.pathname === "/pervoe_ar_prilozhenie/index.html") {
-        link.style.color = "gray";
-        link.style.textDecoration = "none";
-        link.disabled = true;
-    }
-})();
-
-// -------------------------------------------- стартовое заполнение блоков кодом --------------------------------
-
-(function filling_div_blocks() {
-    document.getElementById("create_default_html").textContent = create_default_html_code;
-    document.getElementById("connect_ar").textContent = connect_ar_code;
-    document.getElementById("writing_ar").textContent = writing_ar_code;
-    document.getElementById("another_version_ar_text").textContent = another_version_ar_text_code;
-    document.getElementById("final_code").textContent = final_code;
-    document.getElementById("git_commands").textContent = git_commands_code;
-})();
-
-const create_default_html_code = codes.head_code + codes.end_code;
-const connect_ar_code = codes.head_code + codes.connect_AR + codes.end_code;
-const writing_ar_code = codes.body_AR;
-const another_version_ar_text_code = codes.another_version_ar_text;
-const final_code = codes.head_code + codes.connect_AR + codes.body_AR + codes.end_code;
-const git_commands_code = codes.git_commands;
+// ---------------------------------------------------- общее -----------------------------------------------------
 
 const codes = {
     "head_code": `<!DOCTYPE html>
@@ -71,9 +43,29 @@ const codes = {
     "another_version_ar_text": `<a-entity text="value: My first AR application"></a-entity>`
 }
 
+const create_default_html_code = codes.head_code + codes.end_code;
+const connect_ar_code = codes.head_code + codes.connect_AR + codes.end_code;
+const writing_ar_code = codes.body_AR;
+const another_version_ar_text_code = codes.another_version_ar_text;
+const final_code = codes.head_code + codes.connect_AR + codes.body_AR + codes.end_code;
+const git_commands_code = codes.git_commands;
+
 // ---------------------- добавляем значок иконки копирования всем иконкам копирования -----------------------------
 
-Array.from(document.querySelectorAll('.copy_icon')).forEach(icon => icon.src = "../common/pictures/icons/copy_icon.png");
+Array.from(document.querySelectorAll('.copy_icon')).forEach(icon => {
+    icon.src = "../common/pictures/icons/copy_icon.png"
+});
+
+// -------------------------------------------- заполнение страницы кусками кода__ --------------------------------
+
+(function filling_page_pieces_code() {
+    document.getElementById("create_default_html").textContent = create_default_html_code;
+    document.getElementById("connect_ar").textContent = connect_ar_code;
+    document.getElementById("writing_ar").textContent = writing_ar_code;
+    document.getElementById("another_version_ar_text").textContent = another_version_ar_text_code;
+    document.getElementById("final_code").textContent = final_code;
+    document.getElementById("git_commands").textContent = git_commands_code;
+})();
 
 // ------------------------------------------- копирование пользователем кода -------------------------------------
 

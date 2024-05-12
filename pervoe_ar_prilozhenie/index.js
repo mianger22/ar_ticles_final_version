@@ -41,6 +41,9 @@ const Codes = {
     "another_version_ar_text": `<a-entity text="value: My first AR application"></a-entity>`
 }
 
+// Ставим иконки
+document.getElementsByClassName("copy_icon").src = "../common/pictures/icons/copy_icon.png"; 
+
 const create_default_html_code = Codes.head_code + Codes.end_code;
 const connect_ar_code = Codes.head_code + Codes.connect_AR + Codes.end_code;
 const writing_ar_code = Codes.body_AR;

@@ -42,9 +42,8 @@ const Codes = {
 }
 
 // Ставим иконки
-const all_copy_icons = document.getElementsByClassName("copy_icon");
-Array.from(all_copy_icons).forEach(image => {
-    image.src = "../common/pictures/icons/copy_icon.png"; 
+document.querySelectorAll('.copy_icon').forEach(icon => {
+    icon.src = "../common/pictures/icons/copy_icon.png"; 
 });
 
 const create_default_html_code = Codes.head_code + Codes.end_code;

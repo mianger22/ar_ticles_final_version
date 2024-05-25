@@ -14,7 +14,7 @@ const codes = {
             `,
     "comments": {
         "code": `\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// Тут будет наш код`,
-        "connect": `\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// Мы подключили библиотеку AR.js`
+        "connect": `\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0// Мы подключили библиотеку AR.js и фреймворк A-frame`
     },
     "correct_meta": `
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -39,14 +39,12 @@ const codes = {
     "git_commands": 
         `git add --all
         git commit -m "my first commit"
-        git push`,
-    "another_version_ar_text": `<a-entity text="value: My first AR app"></a-entity>`
+        git push`
 }
 
 const create_default_html_code = codes.head_code + codes.end_code;
 const connect_ar_code = codes.head_code + codes.connect_AR + codes.end_code;
 const writing_ar_code = codes.body_AR;
-const another_version_ar_text_code = codes.another_version_ar_text;
 const final_code = codes.head_code + codes.connect_AR + codes.body_AR + codes.end_code;
 const git_commands_code = codes.git_commands;
 
@@ -56,7 +54,6 @@ const git_commands_code = codes.git_commands;
     document.getElementById("create_default_html").textContent = create_default_html_code;
     document.getElementById("connect_ar").textContent = connect_ar_code;
     document.getElementById("writing_ar").textContent = writing_ar_code;
-    document.getElementById("another_version_ar_text").textContent = another_version_ar_text_code;
     document.getElementById("final_code").textContent = final_code;
     document.getElementById("git_commands").textContent = git_commands_code;
 })();
@@ -95,9 +92,6 @@ function copying(id) {
             break;
         case "writing_ar": 
             click_copy_handler(writing_ar_code, "writing_ar_icon");
-            break;
-        case "another_version_ar_text": 
-            click_copy_handler(another_version_ar_text_code, "another_version_ar_text_icon");
             break;
         case "final_code": 
             click_copy_handler(final_code, "final_code_icon");

@@ -97,7 +97,7 @@
                                 </div>
                                 <p>
                                     <span class="uk-text-warning">Attention!</span> Мы пишем <code class="area_code">&lt;meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"&gt;</code>
-                                        вместо <code class="area_code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения
+                                        вместо <code class="area_code">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> для того, чтобы камера была без неприятного и неудобного увеличения.
                                 </p>
                             </div>
                             <div class="uk-article">
@@ -133,24 +133,8 @@
                                     Во-первых, <code class="area_code">a-scene</code> создаёт сцену
                                 </p>
                                 <p>
-                                    Во-вторых, <code class="area_code">a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code class="area_code">preset="hiro"</code> позволяет программе понять - какой маркер ей искать
+                                    Во-вторых, <code class="area_code">a-marker</code> ищет маркер наведённой камерой. Его аттрибут <code class="area_code">preset="hiro"</code> позволяет программе понять какой маркер ей искать.
                                     Всё, что внутри - выводит нужное нам содержимое над маркеромю. У нас это текст.
-                                </p>
-                                <p>
-                                    Внимание! Я использовал <code class="area_code">a-text</code> вместо <code class="area_code">a-entity</code>, для того чтобы текст был крупнее. Вы же можете использовать его: 
-                                </p>
-                                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                    <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('another_version_ar_text')" id="another_version_ar_text_icon">
-                                            <img alt="copy icon" class="copy_icon">
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <code class="area_code" id="another_version_ar_text">Код загружается. Подождите!</code>
-                                    </p>
-                                </div>
-                                <p>
-                                    <span class="uk-text-secondary">Примечание</span>. Что такое <code class="area_code">a-entity text ...</code> и откуда я взял <code class="area_code">a-text</code> читайте <a rel="external nofollow noopener" target="_blank" href="https://aframe.io/docs/1.0.0/components/text.html#sizing">здесь</a>
                                 </p>
                                 <p>
                                     В итоге получился следующий код нашего первого AR-приложения:

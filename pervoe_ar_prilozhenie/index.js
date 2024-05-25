@@ -32,7 +32,7 @@ const codes = {
     "body_AR": `
     \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<a-scene embedded arjs>
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<a-marker preset="hiro">
-        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<a-text value="My first AR app" color="green" position="0 0 -1" scale="1 1 1"></a-text>
+        \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<a-text value="My first AR app" color="#FFFB8F" position="-1 -1 -2.7" scale="1.5 1.5 1.5" />
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</a-marker>
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0<a-entity camera></a-entity>
         \u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0</a-scene>`,
@@ -40,7 +40,7 @@ const codes = {
         `git add --all
         git commit -m "my first commit"
         git push`,
-    "another_version_ar_text": `<a-entity text="value: My first AR application"></a-entity>`
+    "another_version_ar_text": `<a-entity text="value: My first AR app"></a-entity>`
 }
 
 const create_default_html_code = codes.head_code + codes.end_code;

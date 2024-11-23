@@ -48,3 +48,11 @@ picture img {
     width: 24px; 
     height: 24px; 
 }
+
+pre code {
+    /* padding: 20px; */
+    white-space: pre-wrap; /* Перенос строк */
+    word-wrap: break-word; /* Перенос длинных слов */
+    font-family: monospace; /* Шрифт для кода */
+    line-height: 1.5; /* Интервал между строками */
+}

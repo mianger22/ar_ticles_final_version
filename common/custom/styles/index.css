@@ -1,4 +1,6 @@
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block; 
+}
 
 .area_code {
     white-space: pre-line; word-break: break-all; background-color: white;
@@ -23,10 +25,6 @@ kbd {
     padding: 4px 12px;
     cursor: default;
 }
-
-/* a, button {
-    color: white;
-} */
 
 button a:hover {
     text-decoration: none;

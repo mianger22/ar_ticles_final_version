@@ -155,11 +155,11 @@
                                     модели. Используется getElementById для поиска модели в коде по id привязанному к ней.
                                 </p>
                                 <p>
-                                    Для этого необходимо поставить id="rotating-model" рядом с атрибутами a-entity, чтобы было вот так:
+                                    Для этого необходимо поставить <code class="area_code">id="rotating-model"</code> рядом с атрибутами <code class="area_code">a-entity</code>, чтобы было вот так:
                                     <code class="area_code">&lt;a-entity id=&quot;rotating-model&quot;&gt;&lt;/a-entity&gt</code>
                                 </p>
                                 <p>
-                                    Кстати, атрибут position убираем, так как он теперь лишний. 
+                                    Кстати, атрибут <code class="area_code">position</code> убираем, так как он теперь лишний. 
                                 </p>
                                 <p>
                                     Далее вкратце расскажу что делают оставшиеся строки...
@@ -167,37 +167,37 @@
                                 <p>
                                     <ul>
                                         <li>
-                                            let angle = 0;
+                                            <code class="area_code">let angle = 0;</code>
                                         
                                             Инициализация переменной angle, которая хранит текущий угол вращения модели. Начальное значение равно 0 радиан.
                                         </li>
                                         <li>
-                                            function animate()
+                                            <code class="area_code">function animate();</code> 
                                         
                                             Объявление функции animate, которая будет выполнять анимацию модели. Эта функция будет вызываться многократно с помощью requestAnimationFrame.
                                         </li>
                                         <li>
-                                            angle += 0.02; 
+                                            <code class="area_code">angle += 0.02;</code>  
                                         
                                             Увеличение угла вращения на 0.02 радиана при каждом вызове функции animate. Это определяет скорость вращения модели.
                                         </li>
                                         <li>
-                                            model.object3D.position.x = Math.cos(angle) * 1;
+                                            <code class="area_code">model.object3D.position.x = Math.cos(angle) * 1;</code> 
                                         
                                             Вычисление новой позиции по оси X для модели. Используется функция Math.cos(angle) для определения X-координаты, которая размещает модель на круговой орбите с радиусом 1.
                                         </li>
                                         <li>
-                                            model.object3D.position.z = Math.sin(angle) * 1; 
+                                            <code class="area_code">model.object3D.position.z = Math.sin(angle) * 1;</code>  
                                         
                                             Вычисление новой позиции по оси Z. Здесь Math.sin(angle) используется для определения Z-координаты, что позволяет получать округлую траекторию вращения.
                                         </li>
                                         <li>
-                                            requestAnimationFrame(animate);
+                                            <code class="area_code">requestAnimationFrame(animate);</code>
                                         
                                             Вызов функции requestAnimationFrame, чтобы продолжить анимацию. Это обеспечивает плавную анимацию путем запроса следующего кадра, где снова будет вызвана функция animate.
                                         </li>
                                         <li>
-                                            animate();
+                                            <code class="area_code">animate();</code>
                                         
                                             Первая инициализация анимации. После определения функции animate мы вызываем её, чтобы стартовать процесс вращения модели.
                                         </li>
@@ -220,7 +220,9 @@
     &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
     
     &lt;title&gt;Animation example&lt;/title&gt;
-        
+    
+    &lt;!-- В данном коде подключаю библиотеки локально. Если у Вас дистанционно подключаются, то можете оставить ссылки на удаленные репозитории --&gt;
+    &lt;!-- Если же нет, то подключаете локально, а как - я описал в своей статье https://ustinnovcorpgames.ru/ne_rabotaet_ar/ --&gt;
     &lt;script src=&quot;ar_libraries/aframe-master/aframe-master/dist/aframe-v1.6.0.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;ar_libraries/AR.js-3.4.0/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;

@@ -50,13 +50,13 @@ const git_commands_code = codes.git_commands;
 
 // -------------------------------------------- заполнение страницы кусками кода -----------------------------------
 
-(function filling_page_pieces_code() {
-    document.getElementById("create_default_html").textContent = create_default_html_code;
-    document.getElementById("connect_ar").textContent = connect_ar_code;
-    document.getElementById("writing_ar").textContent = writing_ar_code;
-    document.getElementById("final_code").textContent = final_code;
-    document.getElementById("git_commands").textContent = git_commands_code;
-})();
+// (function filling_page_pieces_code() {
+//     document.getElementById("create_default_html").textContent = create_default_html_code;
+//     document.getElementById("connect_ar").textContent = connect_ar_code;
+//     document.getElementById("writing_ar").textContent = writing_ar_code;
+//     document.getElementById("final_code").textContent = final_code;
+//     document.getElementById("git_commands").textContent = git_commands_code;
+// })();
 
 // ---------------------- добавляем значок иконки копирования всем иконкам копирования -----------------------------
 
@@ -82,22 +82,22 @@ function click_copy_handler(code, id_icon) {
     setTimeout(() => document.getElementById(id_icon).innerHTML = copy_icon, 3000);
 }
 
-function copying(id) {
-    switch (id) {
-        case "create_default_html":
-            click_copy_handler(create_default_html_code, "create_default_html_icon");
-            break;
-        case "connect_ar":
-            click_copy_handler(connect_ar_code, "connect_ar_icon");
-            break;
-        case "writing_ar": 
-            click_copy_handler(writing_ar_code, "writing_ar_icon");
-            break;
-        case "final_code": 
-            click_copy_handler(final_code, "final_code_icon");
-            break;
-        case "git_commands": 
-            click_copy_handler(git_commands_code, "git_commands_icon");
-            break;
-    }
-}
+// function copying(id) {
+//     switch (id) {
+//         case "create_default_html":
+//             click_copy_handler(create_default_html_code, "create_default_html_icon");
+//             break;
+//         case "connect_ar":
+//             click_copy_handler(connect_ar_code, "connect_ar_icon");
+//             break;
+//         case "writing_ar": 
+//             click_copy_handler(writing_ar_code, "writing_ar_icon");
+//             break;
+//         case "final_code": 
+//             click_copy_handler(final_code, "final_code_icon");
+//             break;
+//         case "git_commands": 
+//             click_copy_handler(git_commands_code, "git_commands_icon");
+//             break;
+//     }
+// }

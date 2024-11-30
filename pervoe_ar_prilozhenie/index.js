@@ -99,5 +99,5 @@ function copying(id) {
 //         case "git_commands": 
 //             click_copy_handler(git_commands_code, "git_commands_icon");
 //             break;
-//     }
+    }
 }

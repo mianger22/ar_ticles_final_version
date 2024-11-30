@@ -40,7 +40,8 @@ picture img {
 .copy_icon {
     cursor: pointer;
     width: 20px; 
-    height: 20px; 
+    height: 20px;
+    src: url(../../pictures/icons/copy_icon.png); 
 }
 
 .success_icon {

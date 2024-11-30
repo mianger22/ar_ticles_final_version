@@ -82,11 +82,11 @@ function click_copy_handler(code, id_icon) {
     setTimeout(() => document.getElementById(id_icon).innerHTML = copy_icon, 3000);
 }
 
-// function copying(id) {
-//     switch (id) {
-//         case "create_default_html":
-//             click_copy_handler(create_default_html_code, "create_default_html_icon");
-//             break;
+function copying(id) {
+    switch (id) {
+        case "code1":
+            click_copy_handler(document.getElementById('code1').textContent, "code1");
+            break;
 //         case "connect_ar":
 //             click_copy_handler(connect_ar_code, "connect_ar_icon");
 //             break;
@@ -100,4 +100,4 @@ function click_copy_handler(code, id_icon) {
 //             click_copy_handler(git_commands_code, "git_commands_icon");
 //             break;
 //     }
-// }
+}

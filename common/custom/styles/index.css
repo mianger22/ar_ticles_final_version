@@ -41,7 +41,6 @@ picture img {
     cursor: pointer;
     width: 20px; 
     height: 20px;
-    src: url(../../pictures/icons/copy_icon.png); 
 }
 
 .success_icon {

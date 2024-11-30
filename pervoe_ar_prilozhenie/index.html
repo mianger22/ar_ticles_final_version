@@ -87,15 +87,13 @@
                                 <p class="uk-text-bold">2. Создаём стандартный html-файл</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('code1')" id="code1_icon">
+                                        <div onclick="copying('create_default_html')" id="create_default_html__icon">
                                             <img alt="copy icon" class="copy_icon">
                                         </div>
                                     </div>
                                     <p>
-                                        <!-- <code class="area_code" id="create_default_html">Код загружается. Подождите!</code> -->
-
                                         <pre>
-                                            <code class="language-html" id="code1"> 
+                                            <code class="language-html" id="create_default_html"> 
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -122,14 +120,13 @@
                                 <p>Прописываем подключение в разделе head:</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('connect_ar')" id="connect_ar_icon">
+                                        <div onclick="copying('connect_ar')" id="connect_ar__icon">
                                             <img alt="copy icon" class="copy_icon">
                                         </div>
                                     </div>
                                     <p>
-                                        <!-- <code class="area_code" id="connect_ar">Код загружается. Подождите!</code> -->
                                         <pre>
-                                            <code class="language-html" id="code2">
+                                            <code class="language-html" id="connect_ar">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -153,14 +150,13 @@
                                 <p class="uk-text-bold">4. Пишем AR-код</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('writing_ar')" id="writing_ar_icon">
+                                        <div onclick="copying('ar_code')" id="ar_code__icon">
                                             <img alt="copy icon" class="copy_icon">
                                         </div>
                                     </div>
                                     <p>
-                                        <!-- <code class="area_code" id="writing_ar">Код загружается. Подождите!</code> -->
                                         <pre>
-                                            <code class="language-html">
+                                            <code class="language-html" id="ar_code">
 &lt;a-scene embedded arjs&gt;
     &lt;a-marker preset=&quot;hiro&quot;&gt;
         &lt;a-entity
@@ -186,9 +182,6 @@
                                         <li>
                                             <code class="area_code">a-marker</code> — это инструмент для определения местоположения и распознавания маркеров в дополненной реальности. Он позволяет связать 3D-объекты с конкретным маркером, чтобы они отображались на экране устройства пользователя в зависимости от положения маркера. Его атрибут <code class="area_code">preset="hiro"</code> позволяет программе понять какой маркер ей искать.
                                         </li>
-                                        <!-- <li>
-                                            <code class="area_code">a-text</code> - это инструмент для создания и отображения текста на экране устройства пользователя в режиме реального времени. Его атрибуты позволяют настраивать различные параметры текста, чтобы достичь желаемого визуального эффекта. С помощью A-text можно добавлять информацию, инструкции, подписи и другие текстовые элементы, которые улучшат пользовательский опыт в дополненной реальности. Например, <code class="area_code">position</code> со значением «-1 -1 -2.7» размещает текст в пространстве (например, применяя значение -2,7, мы располагаем текст по вертикали, вы же можете поднять его ещё выше), а <code class="area_code">scale</code> увеличивает или уменьшает размер текста (в нашем случае – увеличивает).
-                                        </li> -->
                                         <li>
                                             <code class="area_code">a-entity</code> - позволяет нам работать с моделью, ссылку на которую
                                             мы указываем в атрибуте <code class="area_code">gltf-model</code>. В данном примере я использую модель шлема. 
@@ -200,19 +193,20 @@
                                         </li>
                                     </ol>
                                 </p>
-                                <p>
+                            </div>
+                            <div class="uk-article">
+                                <p class="uk-text-bold">
                                     В итоге получился следующий код нашего первого AR-приложения:
                                 </p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('final_code')" id="final_code_icon">
+                                        <div onclick="copying('whole_code')" id="whole_code__icon">
                                             <img alt="copy icon" class="copy_icon">
                                         </div>
                                     </div>
                                     <p>
-                                        <!-- <code class="area_code" id="final_code">Код загружается. Подождите!</code> -->
                                         <pre>
-                                            <code class="language-html">
+                                            <code class="language-html" id="whole_code">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -331,14 +325,13 @@
                                     </p>
                                     <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                         <div class="uk-card-badge uk-background-default">
-                                            <div onclick="copying('git_commands')" id="git_commands_icon">
+                                            <div onclick="copying('git_commands')" id="git_commands__icon">
                                                 <img alt="copy icon" class="copy_icon">
                                             </div>
                                         </div>
                                         <p>
-                                            <!-- <code class="area_code" id="git_commands">Код загружается. Подождите!</code> -->
                                             <pre>
-                                                <code class="language-git">
+                                                <code class="language-git" id="git_commands">
 git add --all
 git commit -m &quot;my first commit&quot;
 git push

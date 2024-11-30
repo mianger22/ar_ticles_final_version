@@ -85,7 +85,7 @@ function click_copy_handler(code, id_icon) {
 function copying(id) {
     switch (id) {
         case "code1":
-            click_copy_handler(document.getElementById('code1').textContent, "code1");
+            click_copy_handler(document.getElementById('code1').textContent, "code1_icon");
             break;
 //         case "connect_ar":
 //             click_copy_handler(connect_ar_code, "connect_ar_icon");

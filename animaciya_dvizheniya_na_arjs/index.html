@@ -55,7 +55,7 @@
                                     Анимация движения на AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Последнее обновление - 30 ноября 2024 года
+                                    Последнее обновление - 01 декабря 2024 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -123,10 +123,14 @@
                                 <p>
                                     Для этого напишем простенький js-код. У нас же всё таки AR.js библиотека. 
                                 </p>
-                                <p>
-                                    Вот код. Его мы размещаем в теге script _после_ AR-кода (-иначе не будет работать-).
+                                <p class="uk-text-warning">
+                                    Вот код. Его мы размещаем в теге script обязательно после AR-кода, иначе он не будет работать. 
                                 </p>
-                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                <p>
+                                    Так как запуск анимации объекта происходит после его появления, а, разместив до, анимация естественно 
+                                    не применяется к нему.
+                                </p>
+                                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                     <div class="uk-card-badge uk-background-default">
                                         <div onclick="copying('animation_script__animaciya_dvizheniya')" id="animation_script__animaciya_dvizheniya__icon">
                                             <img alt="copy icon" class="copy_icon">

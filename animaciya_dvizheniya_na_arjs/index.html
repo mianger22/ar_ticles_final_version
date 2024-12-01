@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Enabling site copy protection 
-    <script src="https://unpkg.com/website_security@latest"></script> -->
+    <!-- Enabling site copy protection -->
+    <script src="https://unpkg.com/website_security@latest"></script>
     <base href="https://ustinnovcorpgames.ru/animaciya_dvizheniya_na_arjs/" target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +36,7 @@
     
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -209,58 +210,65 @@
                             </div>
                             <div class="uk-article uk-margin-medium-bottom">
                                 <p class="uk-text-bold">В итоге мы получаем следующий код нашего обновленного приложения:</p>
-                                <p>
-                                    <pre>
-                                        <code class="language-html">
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;ru&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
-    
-    &lt;title&gt;Motion animation on AR.js&lt;/title&gt;
-    
-    &lt;!-- В данном коде подключаю библиотеки локально. Если у Вас дистанционно подключаются, то можете оставить ссылки на удаленные репозитории --&gt;
-    &lt;!-- Если же нет, то подключаете локально, а как - я описал в своей статье https://ustinnovcorpgames.ru/ne_rabotaet_ar/ --&gt;
-    &lt;script src=&quot;ar_libraries/aframe-master/aframe-master/dist/aframe-v1.6.0.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;ar_libraries/AR.js-3.4.0/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;a-scene embedded arjs&gt;
-        &lt;a-marker preset=&quot;hiro&quot;&gt;
-            &lt;a-entity 
-                id=&quot;rotating-model&quot; 
-                gltf-model=&quot;https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf&quot;
-                scale=&quot;0.4 0.4 0.4&quot;
-            &gt;
-            &lt;/a-entity&gt;
-        &lt;/a-marker&gt;
-        &lt;a-entity camera&gt;&lt;/a-entity&gt;
-    &lt;/a-scene&gt;
-    
-    &lt;script&gt;
-        const model = document.getElementById('rotating-model');
-        let angle = 0;
-    
-        function animate() {
-            // Скорость вращения
-            angle += 0.02; 
+                                <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                    <div class="uk-card-badge uk-background-default">
+                                        <div onclick="copying('whole_code__animaciya_dvizheniya')" id="whole_code__animaciya_dvizheniya__icon">
+                                            <img alt="copy icon" class="copy_icon">
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <pre>
+                                            <code class="language-html" id="whole_code__animaciya_dvizheniya">
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;ru&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+        
+        &lt;title&gt;Motion animation on AR.js&lt;/title&gt;
+        
+        &lt;!-- В данном коде подключаю библиотеки локально. Если у Вас дистанционно подключаются, то можете оставить ссылки на удаленные репозитории --&gt;
+        &lt;!-- Если же нет, то подключаете локально, а как - я описал в своей статье https://ustinnovcorpgames.ru/ne_rabotaet_ar/ --&gt;
+        &lt;script src=&quot;ar_libraries/aframe-master/aframe-master/dist/aframe-v1.6.0.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;ar_libraries/AR.js-3.4.0/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;a-scene embedded arjs&gt;
+            &lt;a-marker preset=&quot;hiro&quot;&gt;
+                &lt;a-entity 
+                    id=&quot;rotating-model&quot; 
+                    gltf-model=&quot;https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf&quot;
+                    scale=&quot;0.4 0.4 0.4&quot;
+                &gt;
+                &lt;/a-entity&gt;
+            &lt;/a-marker&gt;
+            &lt;a-entity camera&gt;&lt;/a-entity&gt;
+        &lt;/a-scene&gt;
+        
+        &lt;script&gt;
+            const model = document.getElementById('rotating-model');
+            let angle = 0;
+        
+            function animate() {
+                // Скорость вращения
+                angle += 0.02; 
 
-            // Координаты орбиты
-            model.object3D.position.x = Math.cos(angle) * 1; // Радиус орбиты
-            model.object3D.position.z = Math.sin(angle) * 1; // Радиус орбиты
-            
-            requestAnimationFrame(animate);
-        }
-    
-        animate();
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                                        </code>
-                                    </pre>
-                                </p>
+                // Координаты орбиты
+                model.object3D.position.x = Math.cos(angle) * 1; // Радиус орбиты
+                model.object3D.position.z = Math.sin(angle) * 1; // Радиус орбиты
+                
+                requestAnimationFrame(animate);
+            }
+        
+            animate();
+        &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                                            </code>
+                                        </pre>
+                                    </p>
+                                </div>
                             </div>
                         </section>
                         <footer></footer>

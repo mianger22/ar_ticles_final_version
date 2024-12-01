@@ -23,6 +23,9 @@ Array.from(document.querySelectorAll('.copy_icon')).forEach(icon => {
 
 function copying(id) {
     switch (id) {
+        case "animation_script__animaciya_dvizheniya": 
+            click_copy_handler(document.getElementById('animation_script__animaciya_dvizheniya').textContent, "animation_script__animaciya_dvizheniya__icon");
+            break;
         case "whole_code__animaciya_dvizheniya": 
             click_copy_handler(document.getElementById('whole_code__animaciya_dvizheniya').textContent, "whole_code__animaciya_dvizheniya__icon");
             break;

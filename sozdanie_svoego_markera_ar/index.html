@@ -78,16 +78,16 @@
                                 </p>
                             </div>
                             <div class="uk-article">
-                                <p class="uk-text-bold">Алгоритм работы</p>
+                                <p class="uk-text-bold">Алгоритм</p>
                                 <ol>
                                     <li>
                                         <p>
                                             Заходим на сайт <a rel="external nofollow noopener" target="_blank" id="marker_creation_service" href="https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html">AR.js Marker Training</a>
-                                        </p>.
+                                        </p>
                                     </li>
                                     <li>
                                         <p>
-                                            Нажимаем на розовую кнопку «UPLOAD», чтобы загрузить свою картинку в соответствии с правилами. 
+                                            Нажимаем на розовую кнопку «UPLOAD», чтобы загрузить картинку, которая станет маркером. 
                                             Я загрузил простую картинку хлеба, чтобы в будущем создать его проекцию.
                                         </p>
                                         
@@ -104,17 +104,14 @@
                                                 <img src="pictures/creating_marker.jpg" alt="Создание маркера" loading="lazy">
                                             </picture>
                                         </p>
-                                    </li>
-                                    <li>
                                         <p>
                                             Мы также можем изменить внешний вид, меняя значения pattern ratio и image size, где Pattern Ratio регулирует толщину обрамляющего квадрата, а Image size позволяет настроить чёткость изображения
                                         </p>
-    
-                                        <div class="uk-text-danger">
+                                        <p class="uk-text-danger">
                                             <u>
                                                 Но я Вам не советую менять эти значения. Потому что маркер может сломаться. Так было у меня, когда я сделал Pattern Ratio максимальным
                                             </u>
-                                        </div>
+                                        </p>
                                     </li>
                                     <li>
                                         <p>
@@ -138,22 +135,23 @@
                                             Таким образом мы стали ещё на шаг ближе к <dfn><abbr title="Mixed reality, MR">смешанной реальности</abbr></dfn>. Круто?        
                                         </p> -->
                                     </li>
+                                    <li>
+                                        <p>
+                                            После того, как мы создали метку, нам нужно поменять код, чтобы приложение искало не стандартную метку, 
+                                            а нашу.
+                                        </p>
+                                        <p> 
+                                            Для этого всего-лишь навсего замените строку <code class="area_code">a-marker preset="hiro"</code> на 
+                                            <code class="area_code">&lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;./custom_marker/custom.patt&quot;&gt;</code>, 
+                                            где значение арибута url является адресом расположения Вашего маркера.
+                                         </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Обновляем код, страницу своего приложения, наводим на созданный маркер и видим результат.
+                                        </p>
+                                    </li>
                                 </ol>
-                            </div>
-                            <div class="uk-article">
-                                <p class="uk-text-bold">Обновление кода и результат</p>
-                                <p>
-                                    После того, как мы создали метку, нам нужно поменять код, чтобы приложение искало не стандартную метку, 
-                                    а нашу.
-                                </p>
-                                <p> 
-                                   Для этого всего-лишь навсего замените строку <code class="area_code">a-marker preset="hiro"</code> на 
-                                   <code class="area_code">&lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;./custom_marker/custom.patt&quot;&gt;</code>, 
-                                   где значение арибута url является адресом расположения Вашего маркера.
-                                </p>
-                                <p>
-                                    Теперь обновляем код, страницу своего приложения, наводим на созданный маркер и видим результат.
-                                </p>
                             </div>
                             <article class="uk-margin-medium-top uk-margin-large-bottom">
                                 <div class="uk-child-width-1-2@s uk-text-center" uk-grid>

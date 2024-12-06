@@ -36,7 +36,6 @@
 
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
-    <!-- <script src="index.js" defer></script> -->
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -80,66 +79,75 @@
                             </div>
                             <div class="uk-article">
                                 <p class="uk-text-bold">Алгоритм</p>
-                                <p>
-                                    <ol>
-                                        <li>
-                                            Заходим на сайт 
-                                            <a rel="external nofollow noopener" target="_blank" id="marker_creation_service" href="https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html">
-                                            AR.js Marker Training
-                                            </a>.
-                                        </li>
-                                        <li>
+                                <ol>
+                                    <li>
+                                        <p>
+                                            Заходим на сайт <a rel="external nofollow noopener" target="_blank" id="marker_creation_service" href="https://jeromeetienne.github.io/AR.js/three.js/examples/marker-training/examples/generator.html">AR.js Marker Training</a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
                                             Нажимаем на розовую кнопку «UPLOAD», чтобы загрузить свою картинку в соответствии с правилами. 
                                             Я загрузил простую картинку хлеба, чтобы в будущем создать его проекцию.
+                                        </p>
+                                        
+                                        <!-- <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom"> -->
+                                            <!-- <picture>
+                                                <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp">
+                                                <img src="../common/pictures/markers/ar_marker.jpg" alt="AR-метка" loading="lazy">
+                                            </picture>
+                                        </div> -->
 
-                                            <!-- <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom"> -->
-                                                <!-- <picture>
-                                                    <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp">
-                                                    <img src="../common/pictures/markers/ar_marker.jpg" alt="AR-метка" loading="lazy">
-                                                </picture>
-                                            </div> -->
-
-                                            <p>
-                                                <picture>
-                                                    <!-- <source type="image/webp" srcset="pictures/webp_versions/changing_GitHub_Pages_parameters.webp"> -->
-                                                    <img src="pictures/creating_marker.jpg" alt="Создание маркера" loading="lazy">
-                                                </picture>
-                                            </p>
-                                        </li>
-                                        <li>
+                                        <p>
+                                            <picture>
+                                                <!-- <source type="image/webp" srcset="pictures/webp_versions/changing_GitHub_Pages_parameters.webp"> -->
+                                                <img src="pictures/creating_marker.jpg" alt="Создание маркера" loading="lazy">
+                                            </picture>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
                                             Мы также можем изменить внешний вид, меняя значения pattern ratio и image size, где Pattern Ratio регулирует толщину обрамляющего квадрата, а Image size позволяет настроить чёткость изображения
-        
-                                            <div class="uk-text-danger">
-                                                <u>
-                                                    Но я советую Вам не менять эти значения. Потому что маркер может сломаться. Так было у меня, когда я сделал Pattern Ratio максимальным
-                                                </u>
-                                            </div>
-                                        </li>
-                                        <li>
+                                        </p>
+    
+                                        <div class="uk-text-danger">
+                                            <u>
+                                                Но я Вам не советую менять эти значения. Потому что маркер может сломаться. Так было у меня, когда я сделал Pattern Ratio максимальным
+                                            </u>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>
                                             Итак, мы создали свой маркер. Теперь нам надо скачать его и положить в папку с проектом, чтобы 
-                                            наше приложение знало какой маркер искать. Для этого жмём по DOWNLOAD MARKER.
-                                        </li>
-                                        <li>
+                                            наше приложение знало какой маркер искать. Для этого жмём по DOWNLOAD MARKER.    
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
                                             Напоследок нам надо скачать изображение маркера, чтобы было на что наводить. Для этого жмём по 
-                                            DOWNLOAD IMAGE. 
-        
+                                            DOWNLOAD IMAGE.     
+                                        </p>
+                                        <p>
                                             Полученное изображение сохраняем куда хотим. Можно на будущий сайт. Можно распечатать его. 
-                                            Я выбрал второе, чтобы можно было в реальном мире увидеть парящий объект, пусть и через камеру. 
-                                            <br>
+                                            Я выбрал второе, чтобы можно было в реальном мире увидеть парящий объект, пусть и через камеру.     
+                                        </p>
+                                        <p>
                                             <u>Если у Вас цветной маркер, но чёрно-белый принтер, сделайте маркер чёрно-белым. Иначе приложение не найдёт маркер по цвету.</u>
-                                            <br>
-                                            Таким образом я ещё больше прикоснулся к <dfn><abbr title="Mixed reality, MR">
-                                            смешанной реальности</abbr></dfn>. Круто! 🔥
-                                        </li>
-                                    </ol>
-                                </p>
+                                        </p>
+                                        <p>
+                                            Таким образом мы стали ещё на шаг ближе к смешанной реальности <dfn><abbr title="Mixed reality, MR">
+                                            смешанной реальности</abbr></dfn>. Круто?        
+                                        </p>
+                                    </li>
+                                </ol>
                             </div>
                             <div class="uk-article">
                                 <p class="uk-text-bold">Обновление кода и результат</p>
                                 <p>
                                     После того, как мы создали метку, нам нужно поменять код, чтобы приложение искало не стандартную метку, 
-                                    а нашу. 
-                
+                                    а нашу.
+                                </p>
+                                <p> 
                                    Для этого всего-лишь замените строку <code class="area_code">a-marker preset="hiro"</code> на 
                                    <code class="area_code">&lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;./custom_marker/custom.patt&quot;&gt;</code>, 
                                    где значение арибута url является путём к Вашему маркеру.

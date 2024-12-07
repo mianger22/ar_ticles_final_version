@@ -36,6 +36,7 @@
 
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -88,63 +89,93 @@
                                     <li>
                                         <p>
                                             Нажимаем на <span class="service_button pink">UPLOAD</span>, чтобы загрузить картинку, которая станет маркером. 
-                                            Я загрузил простую картинку хлеба, чтобы в будущем создать его проекцию.
+                                            Я загрузил иконку авокадо.
                                         </p>
-                                        
-                                        <!-- <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom"> -->
-                                            <!-- <picture>
-                                                <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp">
-                                                <img src="../common/pictures/markers/ar_marker.jpg" alt="AR-метка" loading="lazy">
-                                            </picture>
-                                        </div> -->
-
-                                        <!-- <p>
-                                            <picture> -->
-                                                <!-- <source type="image/webp" srcset="pictures/webp_versions/changing_GitHub_Pages_parameters.webp"> -->
-                                                <!-- <img src="pictures/creating_marker.jpg" alt="Создание маркера" loading="lazy">
-                                            </picture>
-                                        </p> -->
                                         <p>
                                             Мы также можем изменить внешний вид, меняя значения pattern ratio и image size, где Pattern Ratio регулирует толщину обрамляющего квадрата, а Image size позволяет настроить чёткость изображения
                                         </p>
-                                        <p class="uk-text-danger">
-                                            <u>
-                                                Но я Вам не советую менять эти значения. Потому что маркер может сломаться. Так было у меня, когда я сделал Pattern Ratio максимальным
-                                            </u>
+                                        <p class="uk-text-secondary">
+                                            Но я Вам не советую менять эти значения. Потому что маркер может сломаться. Так было у меня, когда я сделал Pattern Ratio максимальным
                                         </p>
                                     </li>
                                     <li>
                                         <p>
-                                            Скачиваем созданный маркер нажатием по <span class="service_button pink">DOWNLOAD MARKER</span>. И переносим его в папку с 
-                                            проектом, чтобы наше приложение знало какой маркер искать.   
+                                            Скачиваем созданный маркер нажатием по <span class="service_button pink">DOWNLOAD MARKER</span>. 
+                                            И переносим его в папку с проектом, чтобы приложение знало какой маркер искать. 
+                                            Я создал директорию custom_marker, куда и поместил созданный маркер.
                                         </p>
                                     </li>
                                     <li>
                                         <p>
                                             Также скачиваем изображение маркера, чтобы было на что наводить. Для этого кликаем на  
-                                            <span class="service_button pink">DOWNLOAD IMAGE</span>.     
+                                            <span class="service_button pink">DOWNLOAD IMAGE</span>. Скачанное изображение мы можем 
+                                            либо перенести в свой проект, либо распечатать. Второй вариант прекрасен тем, что позволяет 
+                                            взаимодействовать с виртуальным миром через реальные объекты. Я же выбрал оба варианта: и 
+                                            распечатал, и сохранил в ту же директорию, что и раньше.
                                         </p>
-                                        <p>
-                                            Полученное изображение сохраняем куда хотим. Можно на будущий сайт. Можно распечатать его. 
-                                            Я выбрал второе, чтобы можно было в реальном мире увидеть парящий объект, пусть и через камеру.     
-                                        </p>
-                                        <p>
-                                            <u>Если у Вас цветной маркер, но чёрно-белый принтер, сделайте маркер чёрно-белым. Иначе приложение может не найти Ваш маркер по цвету.</u>
+                                        <p class="uk-text-secondary">
+                                            Если у Вас цветной маркер, но чёрно-белый принтер, сделайте маркер чёрно-белым. 
+                                            Иначе приложение может не найти Ваш маркер по цвету.
                                         </p>
                                         <!-- <p>
                                             Таким образом мы стали ещё на шаг ближе к <dfn><abbr title="Mixed reality, MR">смешанной реальности</abbr></dfn>. Круто?        
                                         </p> -->
+                                        <p>
+                                           В итоге у меня получился следующий маркер. Можете использовать его в своём проекте с целью понимания данной статьи.
+                                        </p>
+                                        <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom">
+                                            <p>
+                                                <picture>
+                                                    <!-- <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp"> -->
+                                                    <img src="pictures/avocado_marker.jpg" alt="Собственный AR-маркер" loading="lazy">
+                                                </picture>
+                                            </p>
+                                            <p class="uk-text-small">
+                                                <a rel="external nofollow noopener" target="_blank" 
+                                                href="https://icons8.com/icon/109296/avocado">Авокадо</a> 
+                                                иконка от <a rel="external nofollow noopener" target="_blank" 
+                                                href="https://icons8.com">Icons8</a>
+                                            </p>
+                                        </div>
                                     </li>
                                     <li>
                                         <p>
-                                            После того, как мы создали метку, нам нужно поменять код, чтобы приложение искало не стандартную метку, 
-                                            а нашу.
+                                            Теперь нам нужно поменять код, чтобы приложение искало вместо стандартной метки нашу.
                                         </p>
                                         <p> 
-                                            Для этого всего-лишь навсего замените строку <code class="area_code">&lt;a-marker preset=&quot;hiro&quot;&gt;</code> на 
+                                            Для этого нам нужно только заменить строку <code class="area_code">&lt;a-marker preset=&quot;hiro&quot;&gt;</code> на 
                                             <code class="area_code">&lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;./custom_marker/custom.patt&quot;&gt;</code>, 
-                                            где значение арибута url является адресом расположения Вашего маркера.
+                                            где url ведёт к месту расположения нового маркера. 
                                          </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Ну и напоследок - замените модель на подходящую, либо не меняйте, если лень. 
+                                            Я же заменю, чтобы достичь своей цели. А также увеличю, чтобы моя модель, которая изначально 
+                                            слишком мелкая, была хорошо видна. Кстати, если Вы не увидите новую модель после внедрения 
+                                            на свой сайт, присмотритесь повнимательнее. Вдруг она очень мелкая, как и в моём случае. 
+                                        </p>
+                                        <p>
+                                            Итак, изменив код, я получаю: 
+                                        </p>
+                                        <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                            <div class="uk-card-badge uk-background-default">
+                                                <div onclick="copying('whole_code__ssma')" id="whole_code__ssma__icon">
+                                                    <img alt="copy icon" class="copy_icon">
+                                                </div>
+                                            </div>
+                                            <p>
+                                                <pre>
+                                                    <code class="language-html" id="whole_code__ssma">
+&lt;a-entity 
+    gltf-model=&quot;https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf&quot;
+    scale=&quot;15 15 15&quot;
+&gt;
+&lt;/a-entity&gt;
+                                                    </code>
+                                                </pre>
+                                            </p>
+                                        </div>
                                     </li>
                                     <li>
                                         <p>
@@ -152,29 +183,42 @@
                                         </p>
                                     </li>
                                 </ol>
-                            </div>
-                            <article class="uk-margin-medium-top uk-margin-large-bottom">
-                                <div class="uk-child-width-1-2@s uk-text-center" uk-grid>
-                                    <div>
-                                        <div class="uk-box-shadow-xlarge uk-box-shadow-hover-medium uk-padding">
-                                            <a rel="prefetch noopener" href="../ne_rabotaet_ar">
-                                                Не работает AR? Попробуйте это...
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-box-shadow-xlarge uk-box-shadow-hover-medium uk-padding">
-                                            <a rel="prefetch noopener" href="../animaciya_dvizheniya_na_arjs">
-                                                Анимация движения на AR.js
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
+                            </div>                            
                         </section>
-                        <footer></footer>
+                        <footer>
+                            <!-- <div class="uk-article">
+                                <p class="uk-text-bold">Результат</p>
+                                <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom">
+                                    <picture>
+                                        <source type="image/webp" srcset="../common/pictures/webp_versions/ar_marker.webp">
+                                        <img src="" alt="AR-метка" loading="lazy">
+                                    </picture>
+                                    <p class="uk-text-italic">
+                                        Наведите на мой маркер...
+                                    </p>
+                                </div>
+                            </div> -->
+                        </footer>
                     </section>
                 </main>
+                <article class="uk-margin-medium-top uk-margin-large-bottom">
+                    <div class="uk-child-width-1-2@s uk-text-center" uk-grid>
+                        <div>
+                            <div class="uk-box-shadow-xlarge uk-box-shadow-hover-medium uk-padding">
+                                <a rel="prefetch noopener" href="../ne_rabotaet_ar">
+                                    Не работает AR? Попробуйте это...
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="uk-box-shadow-xlarge uk-box-shadow-hover-medium uk-padding">
+                                <a rel="prefetch noopener" href="../animaciya_dvizheniya_na_arjs">
+                                    Анимация движения на AR.js
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
                 <article>
                     <div class="uk-article uk-margin-medium-bottom">
                         <header>

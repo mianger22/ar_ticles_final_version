@@ -14,7 +14,7 @@ kbd {
     background-color: #f8f8f8;
 }
 
-#button_code {
+.service_button {
     color: white;
     border-radius: 6px;
     font-family: inherit;
@@ -24,12 +24,12 @@ kbd {
     cursor: default;
 }
 
-#button_code .green {
+.service_button .green {
     box-shadow: inset -1px -1px 0 #1c8139;
     background-color: #1c8139;
 }
 
-#button_code .pink {
+.service_button .pink {
     box-shadow: inset -1px -1px 0 rgb(255,64,129);
     background-color: rgb(255,64,129);
 }

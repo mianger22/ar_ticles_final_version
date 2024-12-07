@@ -17,13 +17,21 @@ kbd {
 #button_code {
     color: white;
     border-radius: 6px;
-    box-shadow: inset -1px -1px 0 #1c8139;
-    background-color: #1c8139;
     font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     padding: 4px 12px;
     cursor: default;
+}
+
+#button_code .green {
+    box-shadow: inset -1px -1px 0 #1c8139;
+    background-color: #1c8139;
+}
+
+#button_code .pink {
+    box-shadow: inset -1px -1px 0 rgb(255,64,129);
+    background-color: rgb(255,64,129);
 }
 
 button a:hover {

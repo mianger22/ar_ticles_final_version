@@ -24,12 +24,12 @@ kbd {
     cursor: default;
 }
 
-.service_button .green {
+.service_button_green {
     box-shadow: inset -1px -1px 0 #1c8139;
     background-color: #1c8139;
 }
 
-.service_button .pink {
+.service_button_pink {
     box-shadow: inset -1px -1px 0 rgb(255,64,129);
     background-color: rgb(255,64,129);
 }

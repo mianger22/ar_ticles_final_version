@@ -140,10 +140,22 @@
                                             Теперь нам нужно поменять код, чтобы приложение искало вместо стандартной метки нашу.
                                         </p>
                                         <p> 
-                                            Для этого нам нужно только заменить строку <code class="area_code">&lt;a-marker preset=&quot;hiro&quot;&gt;</code> на 
-                                            <code class="area_code">&lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;custom_marker/custom.patt&quot;&gt;</code>, 
-                                            где url ведёт к месту расположения нового маркера. 
-                                         </p>
+                                            Для этого нам нужно только заменить строку <code class="area_code">&lt;a-marker preset="hiro"&gt;</code> на 
+                                            <code class="area_code">&lt;a-marker preset="custom" type="pattern" url="custom_marker/custom.patt"&gt;</code>, 
+                                            где перечисленные атрибуты вывполняют следующие функции:
+                                        
+                                            <ul>
+                                                <li>
+                                                    <code class="area_code">preset="custom"</code> - показывает, что маркер не дефолтный (обозначаемый preset="hiro"), а личный, созданный нами
+                                                </li>
+                                                <li>
+                                                    <code class="area_code">type="pattern"</code> - определяет использование шаблона для отслеживания объектов в AR. Это помогает системе распознавать и отслеживать определённые изображения, а камере — правильно размещать и показывать 3D-объекты.
+                                                </li>
+                                                <li>
+                                                    <code class="area_code">url="custom_marker/custom.patt"</code> - адрес расположения маркера, в нашем случае маркер custom.patt хранится в папке custom_marker репозитория проекта
+                                                </li>
+                                            </ul>
+                                        </p>
                                     </li>
                                     <li>
                                         <p>

@@ -104,15 +104,13 @@
                                         <li>position</li>
                                         <li>property</li>
                                         <li>repeat</li>
-                                        <li>repeat</li>
                                         <li>resumeEvents</li>
+                                        <li>rotation</li>
                                         <li>scale</li>
                                         <li>start</li>
                                         <li>startEvents</li>
                                         <li>stop</li>
                                         <li>to</li>
-                                        <li>to</li>
-                                        <li>rotation</li>
                                     </ul>
                                 </p>
                             </div>
@@ -120,101 +118,101 @@
                                 <p class="uk-text-bold">Что умеют</p>
                                 <p>
                                     <ul>
-                                        <li>
-                                            <code class="area_code">mixin</code> позволяет указать набор анимаций, которые могут быть применены к объекту.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">delay</code> задает задержку перед началом анимации, указанную в миллисекундах.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">dur</code> определяет продолжительность анимации в миллисекундах.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">easing</code> устанавливает функцию плавности для анимации (например, "linear", "ease-in", "ease-out").
-                                        </li>
-                                        <li>
-                                            <code class="area_code">repeat</code> устанавливает количество раз, которые анимация должна повториться. По умолчанию 1, можно установить значение infinite для бесконечного воспроизведения.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">direction</code> задаёт направление анимации, например, "normal", "reverse", "alternate".
-                                        </li>
-                                        <li>
-                                            <code class="area_code">to</code> определяет конечное состояние анимации, указывая значения для таких свойств, как позиция, масштаб, вращение и т.д.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">from</code> задаёт начальное состояние анимации.
-                                        </li>
-                                        <li>
+                                        <li id="autoplay_info">
                                             <code class="area_code">autoplay</code> определяет, должна ли анимация начинаться автоматически при загрузке сцены. Значение по умолчанию - true.
                                         </li>
-                                        <li>
-                                            <code class="area_code">pause</code> позволяет приостановить анимацию в определённый момент. Это может быть полезно, если нужно остановить анимацию на каком-либо кадре.
+                                        <li id="delay_info">
+                                            <code class="area_code">delay</code> задает задержку перед началом анимации, указанную в миллисекундах.
                                         </li>
-                                        <li>
-                                            <code class="area_code">onStart</code> задаёт обработчик события, который будет вызван в начале анимации. Это может быть полезно для выполнения дополнительных действий при запуске анимации.
+                                        <li id="direction_info">
+                                            <code class="area_code">direction</code> задаёт направление анимации, например, "normal", "reverse", "alternate".
                                         </li>
-                                        <li>
-                                            <code class="area_code">onEnd</code> задаёт обработчик события, который будет вызван по завершении анимации. Например, для выполнения какого-то действия после окончания анимации.
+                                        <li id="dur_info">
+                                            <code class="area_code">dur</code> определяет продолжительность анимации в миллисекундах.
                                         </li>
-                                        <li>
-                                            <code class="area_code">loop</code> позволяет задать, должна ли анимация повторяться. Если установить на true, анимация будет повторяться после окончания.
+                                        <li id="easing_info">
+                                            <code class="area_code">easing</code> устанавливает функцию плавности для анимации (например, "linear", "ease-in", "ease-out").
                                         </li>
-                                        <li>
-                                            <code class="area_code">start</code> задаёт время, когда анимация должна начинаться, специфично для определенного свойства.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">stop</code> позволяет указать время, когда анимация должна быть остановлена.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">onPause</code> определяет обработчик события, который вызывается при приостановке анимации.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">onResume</code> определяет обработчик события, который вызывается после возобновления анимации.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">fade</code> позволяет задать параметры для эффектов плавного перехода, например, для изменения прозрачности объекта.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">once</code> позволяет установить, должна ли анимация срабатывать только один раз или снова, если она завершится.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">scale</code> управляет масштабированием объекта во время анимации.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">rotation</code> задаёт параметры для вращения объекта.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">position</code> позволяет задать изменения позиции 3D-объекта во время анимации.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">property</code> указывает, какое свойство объекта будет анимироваться (например, position, rotation, scale и т.д.).
-                                        </li>
-                                        <li>
+                                        <li id="easing_info_2">
                                             <code class="area_code">easing</code> - тип функции сглаживания, которая определяет, как анимация будет ускоряться и замедляться (например, linear, ease-in, ease-out и т.д.).
                                         </li>
-                                        <li>
-                                            <code class="area_code">repeat</code> указывает, сколько раз анимация будет повторяться. Можно использовать true для бесконечного повторения.
+                                        <li id="fade_info">
+                                            <code class="area_code">fade</code> позволяет задать параметры для эффектов плавного перехода, например, для изменения прозрачности объекта.
                                         </li>
-                                        <li>
-                                            <code class="area_code">startEvents</code> - события, которые запускают анимацию (например, click, mouseenter и т.д.).
-                                        </li>
-                                        <li>
-                                            <code class="area_code">resumeEvents</code> - события, которые возобновляют анимацию.
-                                        </li>
-                                        <li>
-                                            <code class="area_code">pause</code> указывает, должна ли анимация быть приостановлена при загрузке (по умолчанию false).
-                                        </li>
-                                        <li>
+                                        <li id="fill_info">
                                             <code class="area_code">fill</code> определяет, как анимация будет вести себя после завершения (например, none, forwards, backwards, both).
                                         </li>
-                                        <li>
-                                            <code class="area_code">to</code> можно использовать для указания конечного значения анимации в виде строки, например, to: '0 1 0' для изменения позиции.
+                                        <li id="from_info">
+                                            <code class="area_code">from</code> задаёт начальное состояние анимации.
                                         </li>
-                                        <li>
+                                        <li id="loop_info">
+                                            <code class="area_code">loop</code> позволяет задать, должна ли анимация повторяться. Если установить на true, анимация будет повторяться после окончания.
+                                        </li>
+                                        <li id="mixin_info">
+                                            <code class="area_code">mixin</code> позволяет указать набор анимаций, которые могут быть применены к объекту.
+                                        </li>
+                                        <li id="on_info">
                                             <code class="area_code">on</code> указывает, на каком событии анимация должна запускаться (например, mouseenter, mouseleave).
                                         </li>
-                                        <li>
+                                        <li id="once_info">
+                                            <code class="area_code">once</code> позволяет установить, должна ли анимация срабатывать только один раз или снова, если она завершится.
+                                        </li>
+                                        <li id="onEnd_info">
+                                            <code class="area_code">onEnd</code> задаёт обработчик события, который будет вызван по завершении анимации. Например, для выполнения какого-то действия после окончания анимации.
+                                        </li>
+                                        <li id="onPause_info">
+                                            <code class="area_code">onPause</code> определяет обработчик события, который вызывается при приостановке анимации.
+                                        </li>
+                                        <li id="onResume_info">
+                                            <code class="area_code">onResume</code> определяет обработчик события, который вызывается после возобновления анимации.
+                                        </li>
+                                        <li id="onStart_info">
+                                            <code class="area_code">onStart</code> задаёт обработчик события, который будет вызван в начале анимации. Это может быть полезно для выполнения дополнительных действий при запуске анимации.
+                                        </li>
+                                        <li id="pause_info">
+                                            <code class="area_code">pause</code> позволяет приостановить анимацию в определённый момент. Это может быть полезно, если нужно остановить анимацию на каком-либо кадре.
+                                        </li>
+                                        <li id="pause_info_2">
+                                            <code class="area_code">pause</code> указывает, должна ли анимация быть приостановлена при загрузке (по умолчанию false).
+                                        </li>
+                                        <li id="pauseEvents_info">
                                             <code class="area_code">pauseEvents</code> - события, которые приостанавливают анимацию.
+                                        </li>
+                                        <li id="position_info">
+                                            <code class="area_code">position</code> позволяет задать изменения позиции 3D-объекта во время анимации.
+                                        </li>
+                                        <li id="property_info">
+                                            <code class="area_code">property</code> указывает, какое свойство объекта будет анимироваться (например, position, rotation, scale и т.д.).
+                                        </li>
+                                        <li id="repeat_info">
+                                            <code class="area_code">repeat</code> устанавливает количество раз, которые анимация должна повториться. По умолчанию 1, можно установить значение infinite для бесконечного воспроизведения.
+                                        </li>
+                                        <li id="repeat_info_2">
+                                            <code class="area_code">repeat</code> указывает, сколько раз анимация будет повторяться. Можно использовать true для бесконечного повторения.
+                                        </li>
+                                        <li id="resumeEvents_info">
+                                            <code class="area_code">resumeEvents</code> - события, которые возобновляют анимацию.
+                                        </li>
+                                        <li id="rotation_info">
+                                            <code class="area_code">rotation</code> задаёт параметры для вращения объекта.
+                                        </li>
+                                        <li id="scale_info">
+                                            <code class="area_code">scale</code> управляет масштабированием объекта во время анимации.
+                                        </li>
+                                        <li id="start_info">
+                                            <code class="area_code">start</code> задаёт время, когда анимация должна начинаться, специфично для определенного свойства.
+                                        </li>
+                                        <li id="startEvents_info">
+                                            <code class="area_code">startEvents</code> - события, которые запускают анимацию (например, click, mouseenter и т.д.).
+                                        </li>
+                                        <li id="stop_info">
+                                            <code class="area_code">stop</code> позволяет указать время, когда анимация должна быть остановлена.
+                                        </li>
+                                        <li id="to_info">
+                                            <code class="area_code">to</code> определяет конечное состояние анимации, указывая значения для таких свойств, как позиция, масштаб, вращение и т.д.
+                                        </li>
+                                        <li id="to_info_2">
+                                            <code class="area_code">to</code> можно использовать для указания конечного значения анимации в виде строки, например, to: '0 1 0' для изменения позиции.
                                         </li>
                                     </ul>
                                 </p>

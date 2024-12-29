@@ -36,7 +36,7 @@
     
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
-    <script src="index.js" defer></script>
+    <!-- <script src="index.js" defer></script> -->
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -252,7 +252,62 @@
                                     <li id="fade_info">
                                         <a class="uk-accordion-title" href>fade</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">fade</code> позволяет задать параметры для эффектов плавного перехода, например, для изменения прозрачности объекта.
+                                            <code class="area_code">fade</code> используется для создания эффекта плавного появления 
+                                            или исчезновения объекта. Оно позволяет управлять непрозрачностью (opacity) объекта,
+                                            что делает анимацию более естественной.
+
+                                            Вот основные моменты о свойстве fade...
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство fade принимает булевые значения - true или false. 
+                                                    
+                                                    Если установлено false, то эффект плавного 
+                                                    появления или исчезновения объекта не будет применяться. Это означает, что 
+                                                    объект будет мгновенно менять свою непрозрачность (opacity) 
+                                                    на заданное значение, без каких-либо анимационных переходов. 
+                                                </p>
+                                                <p>
+                                                    Например, если вы установите to: 0 и fade: false, объект просто исчезнет сразу, 
+                                                    без плавного перехода. Аналогично, если вы установите to: 1, объект появится 
+                                                    мгновенно.
+                                                </p>
+                                                <p>
+                                                    Таким образом, использование fade: false приводит к резким изменениям состояния 
+                                                    объекта, без визуально привлекательного эффекта анимации.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Обычно fade используется вместе с другими параметрами анимации, 
+                                                    такими как <a href="#duration_info">duration (длительность анимации)</a> и 
+                                                    <a href="#easing_info">easing (функция сглаживания)</a>, 
+                                                    чтобы контролировать, как быстро или медленно объект будет появляться или исчезать.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+geometry=&quot;primitive: box&quot; 
+material=&quot;color: blue&quot; 
+animation=&quot;property: opacity; to: 0; dur: 1000; startEvents: fade; fade: true&quot;&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере объект (синий куб) будет исчезать (opacity изменится на 0) 
+                                                    в течение 1 секунды, когда произойдёт событие fade.
+                                            
+                                                    Если Вы хотите, чтобы объект появлялся, то можете установить to: 1 и 
+                                                    использовать соответствующее событие для запуска анимации.
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="fill_info">

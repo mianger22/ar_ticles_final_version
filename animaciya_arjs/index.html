@@ -123,7 +123,7 @@
                                         <a class="uk-accordion-title" href>easing</a>
                                         <div class="uk-accordion-content">
                                             <code class="area_code">easing</code> определяет, как будет изменяться скорость анимации в течение времени. Это позволяет создавать естественные и плавные переходы. Существует несколько типов easing-функций, которые можно использовать:
-                                            <ul class="uk-list uk-list-striped">
+                                            <ul class="uk-list uk-list-square uk-list-primary">
                                                 <li>
                                                     linear - анимация происходит с постоянной скоростью, без ускорения или замедления.
                                                 </li>
@@ -293,9 +293,9 @@
                                                     <pre>
                                                         <code class="area_code">
 &lt;a-entity 
-geometry=&quot;primitive: box&quot; 
-material=&quot;color: blue&quot; 
-animation=&quot;property: opacity; to: 0; dur: 1000; startEvents: fade; fade: true&quot;&gt;
+    geometry=&quot;primitive: box&quot; 
+    material=&quot;color: blue&quot; 
+    animation=&quot;property: opacity; to: 0; dur: 1000; startEvents: fade; fade: true&quot;&gt;
 &lt;/a-entity&gt;
                                                         </code>
                                                     </pre>
@@ -313,7 +313,55 @@ animation=&quot;property: opacity; to: 0; dur: 1000; startEvents: fade; fade: tr
                                     <li id="fill_info">
                                         <a class="uk-accordion-title" href>fill</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">fill</code> определяет, как анимация будет вести себя после завершения (например, none, forwards, backwards, both).
+                                            <code class="area_code">fill</code> определяет, как будет отображаться анимация объекта 
+                                            после её завершения. Эти параметры можно использовать для указания состояния объекта по 
+                                            окончании анимации. Использование свойства fill позволяет контролировать, 
+                                            как объекты ведут себя после анимаций, что может значительно улучшить 
+                                            визуальные эффекты в ваших AR-проектах.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <ul class="uk-list uk-list-square uk-list-primary">
+                                                    <li>
+                                                        none - после завершения анимации объект вернется к своему изначальному состоянию 
+                                                        (например, к непрозрачности, которая была до начала анимации), то есть
+                                                        изменения, внесённые анимацией, не сохранятся. Значение является стандартным. 
+                                                    </li>
+                                                    <li>
+                                                        forwards - после завершения анимации объект сохранит последнее значение анимации. Это означает, что если анимация изменяла свойства, такие как непрозрачность, трансформация и т.д., то эти изменения останутся примененными.
+                                                    </li>
+                                                    <li>
+                                                        backwards - объект будет использовать значения анимации до её начала, если анимация начинается до того, как она была вызвана. Это используется для создания эффектов, когда объект выглядит так, как будто он начинается с определенного состояния.
+                                                    </li>
+                                                    <li>
+                                                        both - комбинирует поведение forwards и backwards. Это полезно, когда анимация должна применяться как до её начала, так и после завершения.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    id="myObject" 
+    geometry="primitive: box" 
+    material="color: red" 
+    animation="property: opacity; from: 0; to: 1; dur: 2000; fill: forwards"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере красный куб (geometry и material) будет сначала невидим (from), 
+                                                    и в течение 2 секунд (dur) он будет постепенно становиться видимым (to). 
+                                                    Ну и самое главное - после завершения анимации объект останется видимым (fill).
+                                                </p>
+                                                <p>
+                                                    Это достигается значением forwards. Если бы не оно, то использовалось бы стандартное none, 
+                                                    а значит, куб стал бы снова невидимым. 
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="from_info">

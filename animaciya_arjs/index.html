@@ -89,14 +89,54 @@
                                     <li id="delay_info">
                                         <a class="uk-accordion-title" href>delay</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">delay</code> задает задержку перед началом анимации, указанную в миллисекундах.
+                                            <code class="area_code">delay</code> позволяет задать задержку перед 
+                                            началом анимации. Это свойство полезно, когда вы хотите добавить паузу перед 
+                                            запуском анимации, чтобы создать необходимые временные эффекты или синхронизировать 
+                                            анимацию с другими действиями в сцене. 
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение задается в миллисекундах. Например, если вы хотите, чтобы анимация 
+                                                    началась через 2 секунды, укажите delay: 2000.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Вы можете использовать это свойство, чтобы анимация начала проигрываться только 
+                                                    после того, как пользователь выполнит определенное действие (например, нажатие 
+                                                    кнопки или смотрение на объект) или чтобы создать эффект последовательности анимации.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box" 
+    material="color: red" 
+    position="0 1 -5" 
+    animation="property: position; to: 0 1 -3; dur: 1000; delay: 2000;"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере красный куб (geometry и material) будет в течение 1 секунды (dur)
+                                                    переезжать (property) с заранее заданной позиции "0 1 -5" (position) на 
+                                                    "0 1 -3" (to). И самое главное - движение начнется с задержкой в 2000 миллисекунд 
+                                                    (2 секунды) после загрузки сцены. 
+                                                </p>
+                                            </div>                                        
                                         </div>
                                     </li>
                                     <li id="direction_info">
                                         <a class="uk-accordion-title" href>direction</a>
                                         <div class="uk-accordion-content">
                                             <code class="area_code">direction</code> определяет направление воспроизведения анимации. Оно может принимать несколько значений, что позволяет вам контролировать, как именно будет выполняться анимация. Вот основные значения свойства direction и их значения:
-                                            <ul class="uk-list uk-list-striped">
+                                            <ul class="uk-list uk-list-square uk-list-primary">
                                                 <li>
                                                     normal - анимация воспроизводится в прямом направлении, от начала до конца.
                                                 </li>

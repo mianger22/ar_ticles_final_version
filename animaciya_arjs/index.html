@@ -293,9 +293,9 @@
                                                     <pre>
                                                         <code class="area_code">
 &lt;a-entity 
-    geometry=&quot;primitive: box&quot; 
-    material=&quot;color: blue&quot; 
-    animation=&quot;property: opacity; to: 0; dur: 1000; startEvents: fade; fade: true&quot;&gt;
+    geometry="primitive: box" 
+    material="color: blue" 
+    animation="property: opacity; to: 0; dur: 1000; startEvents: fade; fade: true"&gt;
 &lt;/a-entity&gt;
                                                         </code>
                                                     </pre>
@@ -344,7 +344,6 @@
                                                     <pre>
                                                         <code class="area_code">
 &lt;a-entity 
-    id="myObject" 
     geometry="primitive: box" 
     material="color: red" 
     animation="property: opacity; from: 0; to: 1; dur: 2000; fill: forwards"&gt;
@@ -428,7 +427,61 @@
                                     <li id="pauseEvents_info">
                                         <a class="uk-accordion-title" href>pauseEvents</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">pauseEvents</code> - события, которые приостанавливают анимацию.
+                                            <code class="area_code">pauseEvents</code> управляет тем, как анимация реагирует на 
+                                            события паузы и возобновления. Оно позволяет разработчикам более гибко управлять 
+                                            поведением анимации в зависимости от того, находятся ли они в состоянии паузы или 
+                                            продолжают воспроизведение.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <ul class="uk-list uk-list-square uk-list-primary">
+                                                    <li>
+                                                        true - анимация будет приостанавливать свое выполнение, когда происходит событие паузы (например, когда пользователю нужно временно остановить анимацию). После возобновления она продолжит воспроизводиться с места, на котором была приостановлена. 
+                                                    </li>
+                                                    <li>
+                                                        false - анимация не будет приостанавливаться на события паузы. Если происходит пауза, анимация продолжит работать так, как будто ничего не произошло. Это полезно, если вам нужно, чтобы анимация продолжалась без остановки, независимо от управления паузой.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: red"
+    animation="property: rotation; to: 0 360 0; dur: 5000; pauseEvents: false"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере красный куб (geometry и material) будет вращаться 
+                                                    (property: rotation) в течение 5 секунд (dur) вокруг оси Y все 360 градусов
+                                                    (to: 0 360 0), и, что самое главное, анимация не будет реагировать на события паузы
+                                                    (pauseEvents: false). То есть, даже если пользователь попытается приостановить 
+                                                    анимацию (например, через интерфейс), анимация продолжит вращение объекта до 
+                                                    завершения, игнорируя команду на паузу. 
+                                                </p>
+                                                <p>
+                                                    Сие может быть полезно в ситуациях, когда Вы хотите, чтобы анимация оставалась 
+                                                    активной независимо от взаимодействия пользователя, например, в ситуации с 
+                                                    фоновой анимацией.
+                            
+                                                    То есть в играх или приложениях, где фоновая анимация помогает создать 
+                                                    атмосферу, например, колеблющиеся деревья или мигающие огни, важно, 
+                                                    чтобы эти элементы не останавливались при взаимодействии пользователя с 
+                                                    другими частями интерфейса. Это помогает сохранить общий эффект и не отвлекать 
+                                                    внимание от главных действий, которые выполняет пользователь.
+                                                </p>
+                                                <p>
+                                                    Или в музейных экспозициях или интерактивных инсталляциях анимация может быть 
+                                                    частью общего опыта. Если пользователи могут взаимодействовать с несколькими 
+                                                    элементами одновременно, важно, чтобы фоновая анимация не прерывалась, чтобы 
+                                                    не нарушать поток и атмосферу опыта.
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="position_info">

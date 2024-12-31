@@ -390,7 +390,46 @@
                                     <li id="once_info">
                                         <a class="uk-accordion-title" href>once</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">once</code> позволяет установить, должна ли анимация срабатывать только один раз или снова, если она завершится.
+                                            <code class="area_code">once</code> управляет тем, 
+                                            будет ли анимация воспроизводиться только один раз или повторяться. 
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значения данного свойства булевые, то есть либо true, либо false.
+                                            
+                                                    Если значение равно true, анимация будет выполнена только 
+                                                    один раз. Если равно false или не указано, анимация будет работать снова и снова.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Свойство once полезно в тех случаях, когда анимация должна быть однократной. 
+                                                    Например, анимация, которая изображает эффект появления объекта                                                   
+                                                    (например, всплывающего элемента), может быть настроена с помощью once для
+                                                    того, чтобы не перезапускаться, когда объект уже появился.    
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: blue"
+    animation="property: scale; to: 1.5 1.5 1.5; dur: 1000; once: true"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синий куб (geometry и material) будет увеличиваться (property) 
+                                                    в масштабе до 1,5 раз по всем осям (to) в течение 1 секунды (dur). И - самое главное - 
+                                                    масштабирование куба не будет повторено (once = true).
+                                                </p>
+                                            </div>                                        
                                         </div>
                                     </li>
                                     <li id="onEnd_info">

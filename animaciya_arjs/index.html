@@ -591,7 +591,35 @@
                                     <li id="rotation_info">
                                         <a class="uk-accordion-title" href>rotation</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">rotation</code> задаёт параметры для вращения объекта.
+                                            <code class="area_code">rotation</code> настраивает вращение объекта. Оно позволяет задавать углы поворота объекта, создавая различные визуальные эффекты и динамику в сцене.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство rotation принимает строковое значение в формате 'x y z', чтобы можно 
+                                                    было задать вращение объекта по любой из трех осей координат. Например, значение 
+                                                    '0 360 0' означает, что объект будет вращаться 360 градусов вокруг оси Y. 
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere" 
+    material="color: yellow" 
+    animation="property: rotation; to: 0 360 0; dur: 9000; loop: true;"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере жёлтая сфера (geometry и material) будет в течение 9 секунд (dur)
+                                                    вращаться вокруг оси Y все 360 градусов (property и to), и так без конца 
+                                                    (loop = true).
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="scale_info">

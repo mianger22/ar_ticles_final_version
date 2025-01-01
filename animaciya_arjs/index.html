@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 30 декабря 2024 года
+                                    Обновлено 1 января 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -597,7 +597,57 @@
                                     <li id="scale_info">
                                         <a class="uk-accordion-title" href>scale</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">scale</code> управляет масштабированием объекта во время анимации.
+                                            <code class="area_code">scale</code> увеличивает или уменьшает объект.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство scale принимает строковое значение в формате 'x y z', чтобы можно было 
+                                                    масштабировать по любой из трех осей координат. Например, значение scale: '2 2 2' 
+                                                    увеличит объект в два раза по всем осям. А если прописать scale: '2 1 -0.5', то 
+                                                    размер объекта увеличится в 2 раза по оси Х и уменьшится в полраза по оси Z.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Свойство scale позволяет анимировать размер объекта, что может быть полезно 
+                                                    в различных сценариях, таких как:
+
+                                                    <ul class="uk-list uk-list-square uk-list-primary">
+                                                        <li>
+                                                            Создание эффекта "приближения" или "удаления" при взаимодействии с объектом.
+                                                        </li>
+                                                        <li>
+                                                            Подчеркивание важности объекта на сцене (например, увеличение при наведении 
+                                                            курсора).        
+                                                        </li>
+                                                        <li>
+                                                            Создание более сложных анимационных последовательностей, когда объекты меняют 
+                                                            свои размеры вместе с другими анимациями.
+                                                        </li>
+                                                    </ul>        
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere" 
+    material="color: blue" 
+    animation="property: scale; to: 2 2 2; dur: 7000; dir: alternate; loop: true;"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синяя сфера (geometry и material) будет в течение 7 секунд (dur)
+                                                    увеличиваться в 2 раза (property и to) и также уменьшаться (dir), 
+                                                    и так по кругу без конца (loop = true).
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="start_info">

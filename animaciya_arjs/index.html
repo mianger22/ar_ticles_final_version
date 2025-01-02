@@ -585,7 +585,39 @@
                                     <li id="resumeEvents_info">
                                         <a class="uk-accordion-title" href>resumeEvents</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">resumeEvents</code> - события, которые возобновляют анимацию.
+                                            <code class="area_code">resumeEvents</code> управляет тем, как анимация ведет себя после паузы. 
+                                        
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство resumeEvents принимает булевое значение, т.е. либо false, либо true. 
+
+                                                    Если установлено значение true, события возобновляются, когда анимация начинает 
+                                                    воспроизводиться снова. Если установлено значение false, события не будут 
+                                                    возобновляться.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere" 
+    material="color: blue"
+    animation="property: rotation; to: 0 360 0; dur: 4000; loop: true; resumeEvents: true"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синяя сфера (geometry и material) будет в течение 4 секунд (dur)
+                                                    вращаться вокруг оси Y 360 градусов (property и to), и так без конца (loop). 
+
+                                                    Что главное, так как resumeEvents = true, то сфера продолжит вращаться - даже 
+                                                    после приостановки.
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="rotation_info">
@@ -673,7 +705,7 @@
                                                 <p>
                                                     В данном примере синяя сфера (geometry и material) будет в течение 7 секунд (dur)
                                                     увеличиваться в 2 раза (property и to) и также уменьшаться (dir), 
-                                                    и так по кругу без конца (loop = true).
+                                                    и так по кругу без конца (loop).
                                                 </p>
                                             </div>
                                         </div>

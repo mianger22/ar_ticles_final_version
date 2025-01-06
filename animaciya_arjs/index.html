@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 1 января 2025 года
+                                    Обновлено 6 января 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -578,8 +578,35 @@
                                     <li id="repeat_info">
                                         <a class="uk-accordion-title" href>repeat</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">repeat</code> устанавливает количество раз, которые анимация должна повториться. По умолчанию 1, можно установить значение infinite для бесконечного воспроизведения.
-                                            <code class="area_code">repeat</code> указывает, сколько раз анимация будет повторяться. Можно использовать true для бесконечного повторения.
+                                            <code class="area_code">repeat</code> указывает сколько раз анимация будет повторяться. 
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство repeat принимает числовое значение. Если поставить 0, то анимация будет 
+                                                    повторяться бесконечно. Например, это может быть полезно для создания 
+                                                    эффекта пульсации.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box" 
+    animation="property: position; to: 0 2 -5; dir: alternate; dur: 3000; easing: easeInOutQuad; repeat: 3"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере куб (geometry) будет в течение 3 секунд (dur)
+                                                    перемещаться (property) от центра (0 0 0) к позиции обозначенной свойством to и 
+                                                    обратно (dir). Движение будет происходить по обозначенной кривой свойством easing. 
+                                                    Описанное перемещение будет происходить 3 раза (repeat).        
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="resumeEvents_info">

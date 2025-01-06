@@ -740,7 +740,51 @@
                                     <li id="start_info">
                                         <a class="uk-accordion-title" href>start</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">start</code> задаёт время, когда анимация должна начинаться, специфично для определенного свойства.
+                                            <code class="area_code">start</code> определяет момент начала анимации.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значения данного свойства числовые, обозначающие количество секунд.
+                                                    Например, start: 2 начнет анимацию через 2 секунды после запуска. 
+                                                </p>
+                                                <p>
+                                                    Также значение бывает строковым, например, mouseenter или mouseleave, 
+                                                    чтобы можно было запускать анимацию при взаимодействии пользователя с объектом, 
+                                                    например, при наведении мыши.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Свойство start позволяет контролировать время начала анимации, что 
+                                                    может быть полезно для синхронизации различных эффектов или для создания 
+                                                    реакций на пользовательские действия.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: green"
+    animation="property: position; to: 0 2 -5; dir: alternate; dur: 4000; start: 2"&gt;                                             
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В приведённом примере зелёный куб (geometry и material) в течение 4 секунд (dur)
+                                                    будет перемещаться (property) из центра в новую точку (to) и обратно (dir). 
+                                                    И - что важно - анимация начнётся через 2 секунды после загрузки сцены (start: 2).
+                                                </p>     
+                                                <p>
+                                                    Если значением start будет mouseenter, то анимация начнётся при наведении мыши на 
+                                                    объект. 
+                                                </p>                                           
+                                            </div>  
                                         </div>
                                     </li>
                                     <li id="startEvents_info">

@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 6 января 2025 года
+                                    Обновлено 7 января 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -790,7 +790,42 @@
                                     <li id="startEvents_info">
                                         <a class="uk-accordion-title" href>startEvents</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">startEvents</code> - события, которые запускают анимацию (например, click, mouseenter и т.д.).
+                                            <code class="area_code">startEvents</code> используется для управления событиями, 
+                                            которые инициируют начало анимации. Это позволяет запускать анимацию не только по 
+                                            времени, но и в ответ на действия пользователя или другие события в сцене.                                        
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значения данного свойства строковые, определяющие одно или несколько событий, 
+                                                    которые будут запускать анимацию. Если имеется несколько значений, то они перечисляются
+                                                    через запятую. 
+                                                </p>
+                                                <p>
+                                                    Например, startEvents: mouseenter, click запустит анимацию при наведении мыши на 
+                                                    объект или при нажатии по нему, а простое указание startEvents: mouseenter запустит 
+                                                    анимацию только при наведении мыши.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box" 
+    material="color: red" 
+    animation="property: rotation; to: 0 360 0; dur: 2000; startEvents: mouseenter"&gt;                                             
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В приведённом примере красный куб (geometry и material) в течение 2 секунд (dur)
+                                                    будет вращаться (property) 360 градусов вокруг оси Y (to), как только мы наведём 
+                                                    мышью на него (startEvents).
+                                                </p>                                              
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="stop_info">

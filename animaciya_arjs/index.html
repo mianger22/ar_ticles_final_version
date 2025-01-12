@@ -893,32 +893,15 @@
                                 </p>
                                 <div class="uk-margin-medium-top uk-margin-medium-bottom">
                                     <pre>
-                                        <code class="language-html area_code">
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;ru&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;AR.js Animation Example&lt;/title&gt;
-    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body style=&quot;margin: 0; overflow: hidden;&quot;&gt;
-    &lt;a-scene embedded arjs&gt;
-        &lt;a-entity position=&quot;0 0 -5&quot;&gt;
-            &lt;a-box id=&quot;myBox&quot; 
-                    position=&quot;0 0 0&quot; 
-                    material=&quot;color: blue&quot; 
-                    animation=&quot;property: position; to: 0 2 0; dur: 2000; startEvents: click; 
-                                stopEvents: animationcomplete; 
-                                easing: easeInOutQuad; 
-                                animation__2: property: rotation; to: 0 360 0; dur: 2000; startEvents: animationcomplete&quot;&gt;
-            &lt;/a-box&gt;
-        &lt;/a-entity&gt;
-        &lt;a-entity camera look-controls&gt;&lt;/a-entity&gt;
-    &lt;/a-scene&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box" 
+    material="color: red" 
+    position="0 0 0" 
+    animation="
+        property: position; to: 0 2 0; dur: 1000; startEvents: click; stopEvents: animationcomplete; 
+        animation__2: property: rotation; to: 360 0 0; dur: 4000; startEvents: animationcomplete"&gt;
+&lt;/a-entity&gt;
                                         </code>
                                     </pre>
                                 </div>
@@ -927,14 +910,19 @@
 
                                     <ol>
                                         <li>
-                                            когда пользователь кликает (startEvents) на куб, он поднимается (property) на 2 единицы по 
-                                    оси Y (to) в течение 2 секунд (dur)
+                                            когда пользователь кликает (startEvents) на куб (geometry), он поднимается (property) на 
+                                            2 единицы по оси Y (to) в течение 1 секунды (dur);
                                         </li>
                                         <li>
                                             после завершения этой анимации (stopEvents) начинается вторая анимация (startEvents), 
-                                    где куб начинает вращаться (property) на 360 градусов (to) в течение следующих 2 секунд (dur)
+                                            где куб начинает вращаться (property) и вращается он 360 градусов вокруг оси X (to) 
+                                            в течение 4 секунд (dur).
                                         </li>
                                     </ol>
+                                </p>
+                                <p>
+                                    Как видите, для связки анимаций нужно использовать animationcomplete и каждую анимацию 
+                                    следует пронумеровывать (animation__2, animation__3 и т.д.).
                                 </p>
                             </div>
                         </section>

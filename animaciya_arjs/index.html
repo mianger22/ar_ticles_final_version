@@ -781,17 +781,18 @@
                                     <li id="startEvents_info">
                                         <a class="uk-accordion-title" href>startEvents</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">startEvents</code> используется для управления событиями, 
-                                            которые инициируют начало анимации. Это позволяет запускать анимацию не только по 
-                                            времени, но и в ответ на действия пользователя или другие события в сцене.                                        
+                                            <code class="area_code">startEvents</code> запускает анимацию при возникновении определённых 
+                                            событий.                                        
 
                                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                                 <div class="uk-card-title uk-text-lead">1. Параметры</div>
                                                 <p>
-                                                    Значение данного свойства строковое, определяющее действие с объектом. 
-                                                    Если имеется несколько вариантов, то они перечисляются через запятую. 
+                                                    Значение данного свойства строковое, определяющее действие с объектом или 
+                                                    связь с окончанием предыдущей анимации, что позволяет применять несколько анимаций. 
+                                                    Подробнее <a href="#applying_multiple_animations">тут</a>.
                                                 </p>
                                                 <p>
+                                                    Если имеется несколько вариантов, то они перечисляются через запятую.
                                                     Например, startEvents: click, contextmenu запустит анимацию при нажатии левой 
                                                     (click) или правой (contextmenu) кнопкой мыши на объект, а простое указание 
                                                     startEvents: mouseenter запустит анимацию всего лишь наведением мыши, 
@@ -866,6 +867,75 @@
                                         </div>
                                     </li>
                                 </ul>
+                            </div>
+                        </section>
+                        <section>
+                            <header>
+                                <div class="uk-margin-medium-bottom" id="applying_multiple_animations">
+                                    <h2>
+                                        Применение нескольких анимаций
+                                    </h2>
+                                </div>
+                            </header>
+                            <div class="uk-article uk-margin-medium-bottom">
+                                <p>
+                                    К анимируемому объекту можно применить несколько анимаций. Давайте рассмотрим как. 
+                                </p>
+                                <p>
+                                    Итак, применим 2 анимации, где вторая анимация начинается после завершения первой. 
+                                    Для этого используем атрибут animation с несколькими событиями.  
+                                    Одно из них - событие animationcomplete, чтобы как раз запустить вторую анимацию. 
+                                    И что хорошо - не надо использовать JavaScript, что удобно и просто.
+                                </p>
+                                <p>
+                                    Для начала создадим код, а после - я расскажу, что он делает. 
+                                    Итак - код:
+                                </p>
+                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                    <pre>
+                                        <code class="language-html area_code">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;AR.js Animation Example&lt;/title&gt;
+    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style=&quot;margin: 0; overflow: hidden;&quot;&gt;
+    &lt;a-scene embedded arjs&gt;
+        &lt;a-entity position=&quot;0 0 -5&quot;&gt;
+            &lt;a-box id=&quot;myBox&quot; 
+                    position=&quot;0 0 0&quot; 
+                    material=&quot;color: blue&quot; 
+                    animation=&quot;property: position; to: 0 2 0; dur: 2000; startEvents: click; 
+                                stopEvents: animationcomplete; 
+                                easing: easeInOutQuad; 
+                                animation__2: property: rotation; to: 0 360 0; dur: 2000; startEvents: animationcomplete&quot;&gt;
+            &lt;/a-box&gt;
+        &lt;/a-entity&gt;
+        &lt;a-entity camera look-controls&gt;&lt;/a-entity&gt;
+    &lt;/a-scene&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                        </code>
+                                    </pre>
+                                </div>
+                                <p>
+                                    А теперь - вот что он делает:
+
+                                    <ol>
+                                        <li>
+                                            когда пользователь кликает (startEvents) на куб, он поднимается (property) на 2 единицы по 
+                                    оси Y (to) в течение 2 секунд (dur)
+                                        </li>
+                                        <li>
+                                            после завершения этой анимации (stopEvents) начинается вторая анимация (startEvents), 
+                                    где куб начинает вращаться (property) на 360 градусов (to) в течение следующих 2 секунд (dur)
+                                        </li>
+                                    </ol>
+                                </p>
                             </div>
                         </section>
                         <footer></footer>

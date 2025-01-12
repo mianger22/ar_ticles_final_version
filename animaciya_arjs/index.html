@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 7 января 2025 года
+                                    Обновлено 12 января 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -828,10 +828,43 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li id="stop_info">
-                                        <a class="uk-accordion-title" href>stop</a>
+                                    <li id="stopEvents_info">
+                                        <a class="uk-accordion-title" href>stopEvents</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">stop</code> позволяет указать время, когда анимация должна быть остановлена.
+                                            <code class="area_code">stopEvents</code> позволяет указать, какие события должны 
+                                            привести к остановке анимации.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства строковое, обозначающее действие пользователя. 
+                                                    Если действий несколько, то они перечисляются через запятую.
+                                                </p>
+                                                <p>
+                                                    Например, stopEvents: click, contextmenu остановит анимацию при нажатии на объект 
+                                                    левой (click) или правой (contextmenu) кнопкой мыши.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: blue"
+    animation="property: rotation; to: 0 360 0; dur: 20000; startEvents: mouseenter; stopEvents: mouseleave">&gt;                                             
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В приведённом примере синий куб (material и geometry) в течение 20 секунд (dur)
+                                                    начнёт вращаться (property) 360 градусов вокруг оси Y (to) 
+                                                    при наведении мыши на данный обект (startEvents) и остановится при убирании 
+                                                    мыши с него (stopEvents).
+                                                </p>    
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="to_info">

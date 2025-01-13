@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 12 января 2025 года
+                                    Обновлено 13 января 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -862,8 +862,53 @@
                                     <li id="to_info">
                                         <a class="uk-accordion-title" href>to</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">to</code> определяет конечное состояние анимации, указывая значения для таких свойств, как позиция, масштаб, вращение и т.д.
-                                            <code class="area_code">to</code> можно использовать для указания конечного значения анимации в виде строки, например, to: '0 1 0' для изменения позиции.
+                                            <code class="area_code">to</code> используют для указания результата анимации. 
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства строковое, зависящее от анимируемой характеристики объекта 
+                                                    (position, rotation, material.color и т.п.). Т.е. каждая характеристика или свойство 
+                                                    несут свою форму значения. Например, 
+
+                                                    <ul>
+                                                        <li>
+                                                            для position — трехмерные координаты (например, 0 2 0),
+                                                        </li>
+                                                        <li>
+                                                            для rotation — углы в градусах (например, 0 360 0),
+                                                        </li>
+                                                        <li>
+                                                            для material.color — цвет в формате строки (например, red или #FF0000).
+                                                        </li>
+                                                    </ul>
+                                                </p>
+                                                <p>
+                                                    Найти форму значения нужного свойства Вы можете в описаниях свойств, указанных 
+                                                    выше.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: purple"
+    position="0 0 0"
+    animation="property: position; to: 0 2 0; dur: 500;"&gt;                                             
+&lt;/a-entity&gt;                                      </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В приведённом примере розовый куб (geometry и material) за полсекунды (dur)
+                                                    переместится (property) из центра координат (position) в заданную точку (to).
+                                                </p>
+                                                <p>
+                                                    Результатом анимации выступила новая позиция объекта.
+                                                </p>                                              
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>

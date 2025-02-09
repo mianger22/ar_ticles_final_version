@@ -412,7 +412,48 @@
                                     <li id="loop_info">
                                         <a class="uk-accordion-title" href>loop</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">loop</code> позволяет задать, должна ли анимация повторяться. Если установить на true, анимация будет повторяться после окончания.
+                                            <code class="area_code">loop</code> позволяет задать, будет ли 
+                                            анимация повторяться после завершения. 
+                                            
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства булевое, то есть либо true, либо false.
+                                            
+                                                    Если значение равно true, анимация будет повторяться бесконечно. 
+                                                    Если равно false, анимация выполнится один раз и остановится.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: box"
+    material="color: green"
+    position="0 0 0"
+    animation="property: position; to: 0 2 0; dur: 1000; dir: alternate; loop: true"&gt;
+&lt;/a-entity&gt;
+
+&lt;a-entity 
+    geometry="primitive: sphere"
+    material="color: red"
+    position="2 0 0" 
+    radius="1" 
+    animation="property: position; to: 0 2 0; dur: 1000; dir: alternate; loop: true"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере зелёный куб и красный шар (geometry и material) 
+                                                    будут подниматься и опускаться (property, to и dir) в течение 1 секунды (dur), 
+                                                    а затем анимация будет повторяться бесконечно благодаря свойству loop: true. 
+                                                    Это позволяет создать эффект непрерывного движения, что может быть полезно для 
+                                                    привлечения внимания к объектам в Вашей AR-сцене.
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="on_info">
@@ -433,7 +474,7 @@
                                                     Значения данного свойства булевые, то есть либо true, либо false.
                                             
                                                     Если значение равно true, анимация будет выполнена только 
-                                                    один раз. Если равно false или не указано, анимация будет работать снова и снова.
+                                                    один раз. Если равно false, анимация будет работать снова и снова.
                                                 </p>
                                             </div>
                                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">

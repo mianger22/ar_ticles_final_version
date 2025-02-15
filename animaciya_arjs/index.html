@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 13 января 2025 года
+                                    Обновлено 15 февраля 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -459,7 +459,38 @@
                                     <li id="on_info">
                                         <a class="uk-accordion-title" href>on</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">on</code> указывает, на каком событии анимация должна запускаться (например, mouseenter, mouseleave).
+                                            <code class="area_code">on</code> используется для определения 
+                                            событий, которые будут инициировать анимацию. Это свойство позволяет привязать 
+                                            анимацию к конкретным событиям, таким как click, mouseenter, mouseleave и многие другие. 
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства строковое, равное названию события, которое будет 
+                                                    запускать анимацию. Это может быть любое подходящее событие из стандартного 
+                                                    набора событий DOM.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere"
+    material="color: yellow"
+    position="2 1 0" 
+    radius="0.5"
+    animation="property: position; to: 2 3 0; dur: 1000; on: click"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере жёлтая сфера (material и geometry) при клике (on = click) на 
+                                                    неё будет взлетать на 2 единицы (property и to) за 1 секунду (dur). 
+                                                </p>
+                                            </div>                                        
                                         </div>
                                     </li>
                                     <li id="once_info">

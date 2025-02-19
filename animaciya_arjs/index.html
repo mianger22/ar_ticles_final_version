@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 15 февраля 2025 года
+                                    Обновлено 19 февраля 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -487,8 +487,8 @@
                                                     </pre>
                                                 </div>
                                                 <p>
-                                                    В данном примере жёлтая сфера (material и geometry) при клике (on = click) на 
-                                                    неё будет взлетать на 2 единицы (property и to) за 1 секунду (dur). 
+                                                    В данном примере жёлтая сфера (material и geometry) при клике на 
+                                                    неё (on = click) будет взлетать на 2 единицы (property и to) за 1 секунду (dur). 
                                                 </p>
                                             </div>                                        
                                         </div>
@@ -541,7 +541,71 @@
                                     <li id="onEnd_info">
                                         <a class="uk-accordion-title" href>onEnd</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">onEnd</code> задаёт обработчик события, который будет вызван по завершении анимации. Например, для выполнения какого-то действия после окончания анимации.
+                                            <code class="area_code">onEnd</code> используется для определения действия, 
+                                            которое будет выполнено по завершении анимации. Это свойство позволяет привязать 
+                                            определенные события или действия к моменту, когда анимация завершена, что может быть 
+                                            полезно для создания более сложных интерактивных сценариев.
+                                            
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство onEnd принимает строковое значение, равное названию
+                                                    запланированной функции. 
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
+                                                <p>
+                                                    Атрибут animation с использованием свойства onEnd позволяет Вам управлять 
+                                                    поведением объектов после завершения анимации. Это может быть полезно для создания 
+                                                    эффектов, таких как изменение цвета, перемещение объектов или запуск других 
+                                                    анимаций.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-box position=&quot;0 0.5 0&quot; color=&quot;blue&quot; scale=&quot;1 1 1&quot; animation=&quot;property: position; to: 0 2.5 0; dur: 1000; onEnd: scaleUp&quot;&gt;&lt;/a-box&gt;
+&lt;a-animation id=&quot;scaleUp&quot; attribute=&quot;scale&quot; to=&quot;2 2 2&quot; dur=&quot;1000&quot; begin=&quot;animationcomplete&quot; onEnd=&quot;scaleDown&quot;&gt;&lt;/a-animation&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синий куб после взмывания вверх увеличится, а после снова станет 
+                                                    прежним.
+                                                </p>
+                                                <p>
+                                                    Также использование свойства onEnd позволяет создать более динамичное взаимодействие,
+                                                    где объекты не только анимируются, но и изменяют свое состояние по завершении 
+                                                    анимации, что добавляет глубину и интерактивность в AR-сцену. Но для этого необходим 
+                                                    JavaScript-код, силами AR.js его не сделать. Вот пример как это можно реализовать.
+                                                </p>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-scene&gt;
+    &lt;a-box id=&quot;myBox&quot; position=&quot;0 1 0&quot; color=&quot;blue&quot;
+            animation=&quot;property: position; to: 0 3 0; dur: 1000; onEnd: changeColor&quot;&gt;
+    &lt;/a-box&gt;
+&lt;/a-scene&gt;
+
+&lt;script&gt;
+    document.querySelector('#myBox').addEventListener('changeColor', function () {
+        this.setAttribute('color', 'red');
+    });
+&lt;/script&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    То есть синий куб после взмывания вверх становится красным. Причём моментально. 
+                                                    В отличие от секундного перемещения. Связь изменения состояния и куба происходит 
+                                                    благодаря применению id myBox. Что делают остальные параметры Вы можете найти в 
+                                                    данной статье. Не буду дублировать.  
+                                                </p>
+                                            </div>                                        
                                         </div>
                                     </li>
                                     <li id="onPause_info">

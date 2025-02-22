@@ -2,7 +2,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block; 
 }
 
-pre code {
+pre {
     /* white-space: pre-line;  */
     word-break: break-all; 
     white-space: pre-wrap; /* Перенос строк */

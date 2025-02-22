@@ -55,7 +55,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 19 февраля 2025 года
+                                    Обновлено 22 февраля 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -567,14 +567,17 @@
                                                 <div class="uk-margin-medium-top uk-margin-medium-bottom">
                                                     <pre>
                                                         <code class="area_code">
-&lt;a-box position=&quot;0 0.5 0&quot; color=&quot;blue&quot; scale=&quot;1 1 1&quot; animation=&quot;property: position; to: 0 2.5 0; dur: 1000; onEnd: scaleUp&quot;&gt;&lt;/a-box&gt;
-&lt;a-animation id=&quot;scaleUp&quot; attribute=&quot;scale&quot; to=&quot;2 2 2&quot; dur=&quot;1000&quot; begin=&quot;animationcomplete&quot; onEnd=&quot;scaleDown&quot;&gt;&lt;/a-animation&gt;
+&lt;a-entity id=&quot;myBox&quot; position=&quot;0 0.5 0&quot; color=&quot;blue&quot; scale=&quot;1 1 1&quot;&gt;
+    &lt;a-animation attribute=&quot;position&quot; to=&quot;0 2.5 0&quot; dur=&quot;1000&quot; onEnd=&quot;scaleUp&quot;&gt;&lt;/a-animation&gt;
+    &lt;a-animation id=&quot;scaleUp&quot; attribute=&quot;scale&quot; to=&quot;2 2 2&quot; dur=&quot;1000&quot; onEnd=&quot;scaleDown&quot;&gt;&lt;/a-animation&gt;
+    &lt;a-animation id=&quot;scaleDown&quot; attribute=&quot;scale&quot; to=&quot;1 1 1&quot; dur=&quot;1000&quot;&gt;&lt;/a-animation&gt;
+&lt;/a-entity&gt;
                                                         </code>
                                                     </pre>
                                                 </div>
                                                 <p>
                                                     В данном примере синий куб после взмывания вверх увеличится, а после снова станет 
-                                                    прежним.
+                                                    прежним. 
                                                 </p>
                                                 <p>
                                                     Также использование свойства onEnd позволяет создать более динамичное взаимодействие,

@@ -43,15 +43,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
-    
-    <!-- start highlight -->
-    <script>
-        // first, find all the div.code blocks
-        document.querySelectorAll('.area_code').forEach(el => {
-            // then highlight each
-            hljs.highlightElement(el);
-        });
-    </script>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -1209,5 +1200,14 @@
         </aside>
     </div>
     <footer></footer>
+    
+    <!-- start highlight -->
+    <script>
+        // first, find all the div.code blocks
+        document.querySelectorAll('.area_code').forEach(el => {
+            // then highlight each
+            hljs.highlightElement(el);
+        });
+    </script>
 </body>
 </html>

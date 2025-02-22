@@ -10,7 +10,7 @@ pre code {
     /* Перенос длинных слов */
 }
  
-pre code, pre code.hljs {
+pre code, pre.hljs {
     background-color: white;
 }
 

@@ -5,11 +5,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 pre code {
     /* white-space: pre-line;  */
     word-break: break-all; 
-    background-color: white;
-
     white-space: pre-wrap; /* Перенос строк */
     /* word-wrap: break-word;  */
     /* Перенос длинных слов */
+}
+ 
+pre code, .hljs {
+    background-color: white;
 }
 
 kbd {

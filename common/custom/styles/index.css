@@ -2,14 +2,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block; 
 }
 
-.area_code {
+pre code {
     /* white-space: pre-line;  */
     word-break: break-all; 
     background-color: white;
 
-    /* из pre code */
     white-space: pre-wrap; /* Перенос строк */
-    word-wrap: break-word; /* Перенос длинных слов */
+    /* word-wrap: break-word;  */
+    /* Перенос длинных слов */
 }
 
 kbd {

@@ -63,17 +63,12 @@ picture img {
     height: 24px; 
 }
 
-ul>:nth-child(n+2) {
+ul>:nth-child(n) {
     margin-top: 10px;
     padding-left: 30px;
 }
 
-ul>:nth-child {
-    margin-top: 10px;
-    padding-left: 30px;
-}
-
-/* ul>:nth-child(n+2)::before {
+ul>:nth-child(n)::before {
     color: #1e87f0 !important;
     list-style-type: square;
-} */
+}

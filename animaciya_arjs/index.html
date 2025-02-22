@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!-- Enabling site copy protection 
-    <script src="https://unpkg.com/website_security@latest"></script>-->
+    <!-- Enabling site copy protection -->
+    <script src="https://unpkg.com/website_security@latest"></script>
     <base href="https://ustinnovcorpgames.ru/animaciya_arjs/" target="_blank">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Всё об атрибуте animation в AR.js">
     <meta name="author" content="Устинов Дмитрий Сергеевич | moyustimov@vk.com | ustinnov.ru">
     <meta http-equiv="content-language" content="ru">
-    <meta property="og:title" content="Анимация движения на AR.js">
+    <meta property="og:title" content="Анимация на AR.js">
     <meta property="og:image" content="../common/pictures/illustrations/animaciya_arjs.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="../common/custom/styles/index.css">
     <!-- <script src="index.js" defer></script> -->
 
-    <!-- connect highlight -->
+    <!-- Сonnecting with highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
@@ -1201,11 +1201,9 @@
     </div>
     <footer></footer>
     
-    <!-- start highlight -->
+    <!-- Launching the highlight library -->
     <script>
-        // first, find all the div.code blocks
-        document.querySelectorAll('.area_code').forEach(el => {
-            // then highlight each
+        document.querySelectorAll('pre').forEach(el => {
             hljs.highlightElement(el);
         });
     </script>

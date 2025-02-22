@@ -37,6 +37,12 @@
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
     <script src="index.js" defer></script>
+
+    <!-- Сonnecting with highlight -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>    
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -363,4 +369,12 @@
         </aside>
     </div>
     <footer></footer>
+
+    <!-- Launching the highlight library -->
+    <script>
+        document.querySelectorAll('.area_code').forEach(el => {
+            hljs.highlightElement(el);
+        });
+    </script>
 </body>
+</html>

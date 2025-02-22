@@ -68,7 +68,12 @@ ul>:nth-child(n+2) {
     padding-left: 30px;
 }
 
-ul>:nth-child(n+2)::before {
+ul>:nth-child {
+    margin-top: 10px;
+    padding-left: 30px;
+}
+
+/* ul>:nth-child(n+2)::before {
     color: #1e87f0 !important;
     list-style-type: square;
-}
+} */

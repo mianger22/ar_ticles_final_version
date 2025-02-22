@@ -567,7 +567,7 @@
                                                 <div class="uk-margin-medium-top uk-margin-medium-bottom">
                                                     <pre>
                                                         <code class="area_code">
-&lt;a-entity geometry="primitive: box" position=&quot;0 0.5 0&quot; color=&quot;blue&quot; scale=&quot;1 1 1&quot;&gt;
+&lt;a-entity geometry="primitive: box" color=&quot;blue&quot; position=&quot;0 0.5 0&quot; scale=&quot;1 1 1&quot;&gt;
     &lt;a-animation attribute=&quot;position&quot; to=&quot;0 2.5 0&quot; dur=&quot;1000&quot; onEnd=&quot;scaleUp&quot;&gt;&lt;/a-animation&gt;
     &lt;a-animation id=&quot;scaleUp&quot; attribute=&quot;scale&quot; to=&quot;2 2 2&quot; dur=&quot;1000&quot; onEnd=&quot;scaleDown&quot;&gt;&lt;/a-animation&gt;
     &lt;a-animation id=&quot;scaleDown&quot; attribute=&quot;scale&quot; to=&quot;1 1 1&quot; dur=&quot;1000&quot;&gt;&lt;/a-animation&gt;
@@ -589,9 +589,13 @@
                                                     <pre>
                                                         <code class="area_code">
 &lt;a-scene&gt;
-    &lt;a-box id=&quot;myBox&quot; position=&quot;0 1 0&quot; color=&quot;blue&quot;
-            animation=&quot;property: position; to: 0 3 0; dur: 1000; onEnd: changeColor&quot;&gt;
-    &lt;/a-box&gt;
+    &lt;a-entity 
+        id="myBox"
+        geometry="primitive: box" 
+        material="color: blue" 
+        position="0 1 0"
+        animation="property: position; to: 0 3 0; dur: 1000; onEnd: changeColor"&gt;
+    &lt;/a-entity&gt;
 &lt;/a-scene&gt;
 
 &lt;script&gt;

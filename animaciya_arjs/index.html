@@ -556,7 +556,7 @@
                                                 <div class="uk-card-title uk-text-lead">1. Параметры</div>
                                                 <p>
                                                     Свойство onEnd принимает строковое значение, равное названию
-                                                    запланированной функции. 
+                                                    запланированной функции, записанной в нотации lowerCamelCase.
                                                 </p>
                                             </div>
                                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
@@ -573,10 +573,10 @@
                                                 <div class="uk-margin-medium-top uk-margin-medium-bottom">
                                                     <pre>
                                                         <code class="area_code">
-&lt;a-entity geometry="primitive: box" color=&quot;blue&quot; position=&quot;0 0.5 0&quot; scale=&quot;1 1 1&quot;&gt;
-    &lt;a-animation attribute=&quot;position&quot; to=&quot;0 2.5 0&quot; dur=&quot;1000&quot; onEnd=&quot;scaleUp&quot;&gt;&lt;/a-animation&gt;
-    &lt;a-animation id=&quot;scaleUp&quot; attribute=&quot;scale&quot; to=&quot;2 2 2&quot; dur=&quot;1000&quot; onEnd=&quot;scaleDown&quot;&gt;&lt;/a-animation&gt;
-    &lt;a-animation id=&quot;scaleDown&quot; attribute=&quot;scale&quot; to=&quot;1 1 1&quot; dur=&quot;1000&quot;&gt;&lt;/a-animation&gt;
+&lt;a-entity geometry="primitive: box" color="blue" position="0 0.5 0" scale="1 1 1"&gt;
+    &lt;a-animation attribute="position" to="0 2.5 0" dur="1000" onEnd="scaleUp"&gt;&lt;/a-animation&gt;
+    &lt;a-animation id="scaleUp" attribute="scale" to="2 2 2" dur="1000" onEnd="scaleDown"&gt;&lt;/a-animation&gt;
+    &lt;a-animation id="scaleDown" attribute="scale" to="1 1 1" dur="1000"&gt;&lt;/a-animation&gt;
 &lt;/a-entity&gt;
                                                         </code>
                                                     </pre>
@@ -594,14 +594,17 @@
                                                 <div class="uk-margin-medium-top uk-margin-medium-bottom">
                                                     <pre>
                                                         <code class="area_code">
-&lt;a-scene&gt;
-    &lt;a-entity 
-        id="myBox"
-        geometry="primitive: box" 
-        material="color: blue" 
-        position="0 1 0"
-        animation="property: position; to: 0 3 0; dur: 1000; onEnd: changeColor"&gt;
-    &lt;/a-entity&gt;
+&lt;a-scene embedded arjs&gt;
+    &lt;a-marker preset="hiro"&gt;
+        &lt;a-entity 
+            id="myBox"
+            geometry="primitive: box" 
+            material="color: blue" 
+            position="0 1 0"
+            animation="property: position; to: 0 3 0; dur: 1000; onEnd: changeColor"&gt;
+        &lt;/a-entity&gt;
+    &lt;/a-marker&gt;
+    &lt;a-entity camera&gt;&lt;/a-entity&gt;
 &lt;/a-scene&gt;
 
 &lt;script&gt;
@@ -624,7 +627,82 @@
                                     <li id="onPause_info">
                                         <a class="uk-accordion-title" href>onPause</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">onPause</code> определяет обработчик события, который вызывается при приостановке анимации.
+                                            <code class="area_code">onPause</code> используется для указания 
+                                            действия, которое должно произойти, когда анимация приостанавливается. Это может быть 
+                                            полезно, если вы хотите выполнить определенные действия в момент, когда анимация 
+                                            временно останавливается, например, изменить состояние объекта или запустить другую 
+                                            анимацию.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство onPause принимает строковое значение, равное названию
+                                                    запланированной функции, записанной в нотации lowerCamelCase.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity geometry="primitive: box" material="color: blue" position="0 0.5 0" scale="1 1 1"&gt;
+    &lt;a-animation attribute="position" to="0 12.5 0" dur="10000" onPause="scaleUp"&gt;&lt;/a-animation&gt;
+    &lt;a-animation id="scaleUp" attribute="scale" to="3 3 3" dur="3000"&gt;&lt;/a-animation&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синий куб (geometry и material) летит вверх на 12 единиц 
+                                                    (attribute и to) в течение 10 секунд (dur). Если полёт будет приостановлен, то 
+                                                    запустится анимация увеличения куба: наш объект будет расти в 3 раза в 
+                                                    течение 3 секунд. 
+                                                </p>
+                                                <p>
+                                                    Вообще если захотите, то можете добавить всё, что угодно. Например, 
+                                                    поменять цвет модели. Правда не во всех случаях получится обойтись без JavaScript. 
+                                                    Например, та же смена цвета работает только в случае применения JS. 
+                                                </p>
+                                                <p>
+                                                    Ну, а чтобы воспользоваться JS в данном случае, например, показать сообщение при 
+                                                    приостановке анимации, мы прописываем в onPause название функции, которая будет 
+                                                    запускать нужное нам действие. И тогда в конце кода вставляем кусок JS.
+                                                </p> 
+                                                <p>
+                                                    Вот пример. В нём после приостановки анимации выводится сообщение на экран. 
+                                                </p>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-scene embedded arjs&gt;
+    &lt;a-marker preset="hiro"&gt;
+        &lt;a-entity 
+            id="myBox"
+            geometry="primitive: box" 
+            material="color: blue" 
+            position="0 1 0"
+            animation="property: position; to: 0 3 0; dur: 1000; onPause: handlePause"&gt;
+        &lt;/a-entity&gt;
+    &lt;/a-marker&gt;
+    &lt;a-entity camera&gt;&lt;/a-entity&gt;
+&lt;/a-scene&gt;
+
+&lt;script&gt;
+    function handlePause() {
+        alert("Перемещение объекта приостановлено");
+    }
+&lt;/script&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    Таким образом, свойство onPause позволяет вам управлять поведением 
+                                                    вашего приложения в тот момент, когда анимация временно 
+                                                    останавливается. Если понавешать обработчиков событий на модель (пауза, 
+                                                    начало, остановка и пр.), то можно сделать интерактивный и функциональный 
+                                                    объект, что будет являться большим плюсом для проекта.
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="onResume_info">

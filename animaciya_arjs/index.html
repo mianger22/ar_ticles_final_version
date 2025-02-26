@@ -61,7 +61,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 23 февраля 2025 года
+                                    Обновлено 26 февраля 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -708,7 +708,36 @@
                                     <li id="onResume_info">
                                         <a class="uk-accordion-title" href>onResume</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">onResume</code> определяет обработчик события, который вызывается после возобновления анимации.
+                                            <code class="area_code">onResume</code>используется для указания действия, которое должно 
+                                            произойти, когда анимация возобновляется после приостановки. Это может быть полезно, если 
+                                            вы хотите выполнить определенные действия в момент, когда анимация возобновляется, например, 
+                                            изменить состояние объекта или запустить другую анимацию.
+
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Свойство onResume принимает строковое значение, равное названию
+                                                    запланированной функции, записанной в нотации lowerCamelCase.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity geometry="primitive: box" material="color: purple" position="0 0.5 0" scale="4 4 4"&gt;
+    &lt;a-animation attribute="position" to="0 7.5 0" dur="7000" onResume="scaleDown"&gt;&lt;/a-animation&gt;
+    &lt;a-animation id="scaleDown" attribute="scale" to="2 2 2" dur="500"&gt;&lt;/a-animation&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере фиолетовый куб (geometry и material) будет лететь вверх на 7 единиц 
+                                                    (attribute и to) в течение 7 секунд (dur). Если полёт будет приостановлен и 
+                                                    возобновлён, то куб уменьшится в 2 раза за полсекунды. Не мешайте кубу лететь!
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="onStart_info">

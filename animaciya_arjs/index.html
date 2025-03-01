@@ -61,7 +61,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 26 февраля 2025 года
+                                    Обновлено 01 марта 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -544,179 +544,21 @@
                                             </div>                                        
                                         </div>
                                     </li>
-                                    <li id="onEnd_info">
-                                        <a class="uk-accordion-title" href>onEnd</a>
-                                        <div class="uk-accordion-content">
-                                            <code class="area_code">onEnd</code> используется для определения действия, 
-                                            которое будет выполнено по завершении анимации. Это свойство позволяет привязать 
-                                            определенные события или действия к моменту, когда анимация завершена, что может быть 
-                                            полезно для создания более сложных интерактивных сценариев.
-                                            
-                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
-                                                <p>
-                                                    Свойство onEnd принимает строковое значение, равное названию
-                                                    запланированной функции, записанной в нотации lowerCamelCase.
-                                                </p>
-                                            </div>
-                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-bottom">
-                                                <div class="uk-card-title uk-text-lead">2. Использование</div>
-                                                <p>
-                                                    Атрибут animation с использованием свойства onEnd позволяет Вам управлять 
-                                                    поведением объектов после завершения анимации. Это может быть полезно для создания 
-                                                    эффектов, таких как изменение цвета, перемещение объектов или запуск других 
-                                                    анимаций.
-                                                </p>
-                                            </div>
-                                            <div class="uk-card uk-card-default uk-card-body">
-                                                <div class="uk-card-title uk-text-lead">3. Пример</div>
-                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
-                                                    <pre>
-                                                        <code class="area_code">
-&lt;a-entity geometry="primitive: box" color="blue" position="0 0.5 0" scale="1 1 1"&gt;
-    &lt;a-animation attribute="position" to="0 2.5 0" dur="1000" onEnd="scaleUp"&gt;&lt;/a-animation&gt;
-    &lt;a-animation id="scaleUp" attribute="scale" to="2 2 2" dur="1000" onEnd="scaleDown"&gt;&lt;/a-animation&gt;
-    &lt;a-animation id="scaleDown" attribute="scale" to="1 1 1" dur="1000"&gt;&lt;/a-animation&gt;
-&lt;/a-entity&gt;
-                                                        </code>
-                                                    </pre>
-                                                </div>
-                                                <p>
-                                                    В данном примере синий куб после взмывания вверх увеличится, а после снова станет 
-                                                    прежним. 
-                                                </p>
-                                                <p>
-                                                    Также использование свойства onEnd позволяет создать более динамичное взаимодействие,
-                                                    где объекты не только анимируются, но и изменяют свое состояние по завершении 
-                                                    анимации, что добавляет глубину и интерактивность в AR-сцену. Но для этого необходим 
-                                                    JavaScript-код, силами AR.js его не сделать. Вот пример как это можно реализовать.
-                                                </p>
-                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
-                                                    <pre>
-                                                        <code class="area_code">
-&lt;a-scene embedded arjs&gt;
-    &lt;a-marker preset="hiro"&gt;
-        &lt;a-entity 
-            id="myBox"
-            geometry="primitive: box" 
-            material="color: blue" 
-            position="0 1 0"
-            animation="property: position; to: 0 3 0; dur: 1000; onEnd: changeColor"&gt;
-        &lt;/a-entity&gt;
-    &lt;/a-marker&gt;
-    &lt;a-entity camera&gt;&lt;/a-entity&gt;
-&lt;/a-scene&gt;
-
-&lt;script&gt;
-    document.querySelector('#myBox').addEventListener('changeColor', function () {
-        this.setAttribute('color', 'red');
-    });
-&lt;/script&gt;
-                                                        </code>
-                                                    </pre>
-                                                </div>
-                                                <p>
-                                                    То есть синий куб после взмывания вверх становится красным. Причём моментально. 
-                                                    В отличие от секундного перемещения. Связь изменения состояния и куба происходит 
-                                                    благодаря применению id myBox. Что делают остальные параметры Вы можете найти в 
-                                                    данной статье. Не буду дублировать.  
-                                                </p>
-                                            </div>                                        
-                                        </div>
-                                    </li>
-                                    <li id="onPause_info">
-                                        <a class="uk-accordion-title" href>onPause</a>
-                                        <div class="uk-accordion-content">
-                                            <code class="area_code">onPause</code> используется для указания 
-                                            действия, которое должно произойти, когда анимация приостанавливается. Это может быть 
-                                            полезно, если вы хотите выполнить определенные действия в момент, когда анимация 
-                                            временно останавливается, например, изменить состояние объекта или запустить другую 
-                                            анимацию.
-
-                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
-                                                <p>
-                                                    Свойство onPause принимает строковое значение, равное названию
-                                                    запланированной функции, записанной в нотации lowerCamelCase.
-                                                </p>
-                                            </div>
-                                            <div class="uk-card uk-card-default uk-card-body">
-                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
-                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
-                                                    <pre>
-                                                        <code class="area_code">
-&lt;a-entity geometry="primitive: box" material="color: blue" position="0 0.5 0" scale="1 1 1"&gt;
-    &lt;a-animation attribute="position" to="0 12.5 0" dur="10000" onPause="scaleUp"&gt;&lt;/a-animation&gt;
-    &lt;a-animation id="scaleUp" attribute="scale" to="3 3 3" dur="3000"&gt;&lt;/a-animation&gt;
-&lt;/a-entity&gt;
-                                                        </code>
-                                                    </pre>
-                                                </div>
-                                                <p>
-                                                    В данном примере синий куб (geometry и material) летит вверх на 12 единиц 
-                                                    (attribute и to) в течение 10 секунд (dur). Если полёт будет приостановлен, то 
-                                                    запустится анимация увеличения куба: наш объект будет расти в 3 раза в 
-                                                    течение 3 секунд. 
-                                                </p>
-                                                <p>
-                                                    Вообще если захотите, то можете добавить всё, что угодно. Например, 
-                                                    поменять цвет модели. Правда не во всех случаях получится обойтись без JavaScript. 
-                                                    Например, та же смена цвета работает только в случае применения JS. 
-                                                </p>
-                                                <p>
-                                                    Ну, а чтобы воспользоваться JS в данном случае, например, показать сообщение при 
-                                                    приостановке анимации, мы прописываем в onPause название функции, которая будет 
-                                                    запускать нужное нам действие. И тогда в конце кода вставляем кусок JS.
-                                                </p> 
-                                                <p>
-                                                    Вот пример. В нём после приостановки анимации выводится сообщение на экран. 
-                                                </p>
-                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
-                                                    <pre>
-                                                        <code class="area_code">
-&lt;a-scene embedded arjs&gt;
-    &lt;a-marker preset="hiro"&gt;
-        &lt;a-entity 
-            id="myBox"
-            geometry="primitive: box" 
-            material="color: blue" 
-            position="0 1 0"
-            animation="property: position; to: 0 3 0; dur: 1000; onPause: handlePause"&gt;
-        &lt;/a-entity&gt;
-    &lt;/a-marker&gt;
-    &lt;a-entity camera&gt;&lt;/a-entity&gt;
-&lt;/a-scene&gt;
-
-&lt;script&gt;
-    function handlePause() {
-        alert("Перемещение объекта приостановлено");
-    }
-&lt;/script&gt;
-                                                        </code>
-                                                    </pre>
-                                                </div>
-                                                <p>
-                                                    Таким образом, свойство onPause позволяет вам управлять поведением 
-                                                    вашего приложения в тот момент, когда анимация временно 
-                                                    останавливается. Если понавешать обработчиков событий на модель (пауза, 
-                                                    начало, остановка и пр.), то можно сделать интерактивный и функциональный 
-                                                    объект, что будет являться большим плюсом для проекта.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li id="onResume_info">
-                                        <a class="uk-accordion-title" href>onResume</a>
+                                    <li id="onPRSE_info">
+                                        <a class="uk-accordion-title" href>onPause, onResume, onStart, onEnd</a>
                                         <div class="uk-accordion-content">
                                             <code class="area_code">onResume</code>используется для указания действия, которое должно 
                                             произойти, когда анимация возобновляется после приостановки. Это может быть полезно, если 
                                             вы хотите выполнить определенные действия в момент, когда анимация возобновляется, например, 
-                                            изменить состояние объекта или запустить другую анимацию.
+                                            изменить состояние объекта или запустить другую анимацию. <code class="area_code">
+                                            onPause, onStart, onEnd</code> являются аналогичными данному свойству: onPause - когда 
+                                            анимация приостановлена, onStart - когда она только запустилась (не путать с возобновлением), 
+                                            onEnd - когда завершилась.
 
                                             <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
                                                 <div class="uk-card-title uk-text-lead">1. Параметры</div>
                                                 <p>
-                                                    Свойство onResume принимает строковое значение, равное названию
+                                                    Любое из данных свойств принимает строковое значение, равное названию
                                                     запланированной функции, записанной в нотации lowerCamelCase.
                                                 </p>
                                             </div>
@@ -737,13 +579,60 @@
                                                     (attribute и to) в течение 7 секунд (dur). Если полёт будет приостановлен и 
                                                     возобновлён, то куб уменьшится в 2 раза за полсекунды. Не мешайте кубу лететь!
                                                 </p>
+                                                <p>
+                                                   Для onPause, onStart, onEnd примеры будут такими же. Просто меняете onResume 
+                                                   на нужное Вам. 
+                                                </p>
+                                                <p>
+                                                    Кстати, если захотите, то сможете сделать всё, что угодно, с объектом. Например, 
+                                                    поменять цвет модели или вывести сообщение пользователю. Правда, не во всех случаях 
+                                                    получится обойтись без JavaScript. 
+                                                    Например, та же смена цвета работает только в случае применения JS. 
+                                                    Давайте рассмотрим пример с применением JS, но используя теперь 
+                                                    не onResume, а onEnd.
+                                                </p>
+                                                <p>
+                                                    Чтобы воспользоваться JS в данном случае, например, поменять цвет модели 
+                                                    по завершении анимации, мы прописываем в onEnd название функции, которая будет 
+                                                    запускать нужное нам действие. И тогда в конце кода вставляем кусок JS.
+                                                    Так и сделаем!
+                                                </p> 
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-scene embedded arjs&gt;
+    &lt;a-marker preset="hiro"&gt;
+        &lt;a-entity 
+            id="myObject"
+            geometry="primitive: sphere" 
+            material="color: yellow" 
+            position="0 0 0"
+            animation="property: position; to: 0 5 0; dur: 6000; onEnd: changeColor"&gt;
+        &lt;/a-entity&gt;
+    &lt;/a-marker&gt;
+    &lt;a-entity camera&gt;&lt;/a-entity&gt;
+&lt;/a-scene&gt;
+
+&lt;script&gt;
+    document.querySelector('#myObject').addEventListener('changeColor', function () {
+        this.setAttribute('color', 'red');
+    });
+&lt;/script&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    Что получилось? Жёлтый шар после полёта становится красным. Причём моментально. 
+                                                    В отличие от шести секундного перемещения. Связь изменения состояния и 
+                                                    нашей модели происходит благодаря использованию id. Что делают остальные параметры, 
+                                                    Вы можете найти в данной статье. Не буду повторять.  
+                                                </p>
+                                                <p>
+                                                    Кстати, если понавешать обработчиков событий на модель (пауза, 
+                                                    начало, остановка и пр.), то можно сделать более интересный контент.
+                                                    А это, как минимум, выгодно.
+                                                </p>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li id="onStart_info">
-                                        <a class="uk-accordion-title" href>onStart</a>
-                                        <div class="uk-accordion-content">
-                                            <code class="area_code">onStart</code> задаёт обработчик события, который будет вызван в начале анимации. Это может быть полезно для выполнения дополнительных действий при запуске анимации.
                                         </div>
                                     </li>
                                     <li id="pause_info">

@@ -376,28 +376,30 @@
 
     <!-- Launching the highlight library -->
     <script>
-        document.querySelectorAll('pre').forEach(el => {
-            hljs.highlightElement(el);
-        });
-
-        // Инициализация highlightjs-copy
-        const copyButtons = document.querySelectorAll('.hljs');
-        copyButtons.forEach((block) => {
-            block.addEventListener('click', () => {
-                // Копируем текст блока кода
-                navigator.clipboard.writeText(block.innerText).then(() => {
-                    alert('Код скопирован в буфер обмена!');
-                }).catch(err => {
-                    console.error('Ошибка при копировании: ', err);
-                });
-            });
-        });
-
         hljs.addPlugin(
             new CopyButtonPlugin({
                 autohide: false, // Always show the copy button
             })
         );
+
+        hljs.highlightAll();
+
+        document.querySelectorAll('pre').forEach(el => {
+            hljs.highlightElement(el);
+        });
+
+            // Инициализация highlightjs-copy
+            const copyButtons = document.querySelectorAll('.hljs');
+            copyButtons.forEach((block) => {
+                block.addEventListener('click', () => {
+                    // Копируем текст блока кода
+                    navigator.clipboard.writeText(block.innerText).then(() => {
+                        alert('Код скопирован в буфер обмена!');
+                    }).catch(err => {
+                        console.error('Ошибка при копировании: ', err);
+                    });
+                });
+            });
     </script>
 </body>
 </html>

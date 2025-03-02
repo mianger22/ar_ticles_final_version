@@ -36,13 +36,22 @@
 
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
-    <script src="index.js" defer></script>
 
     <!-- Сonnecting with highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+    <!-- Сonnecting with highlight-copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <style>
+        .hljs {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -216,14 +225,9 @@
                                             Итак, возьмём код с первого урока и заменим в нём тег <code class="area_code">a-marker</code> на следующий: 
                                         </p>
                                         <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                            <div class="uk-card-badge uk-background-default">
-                                                <div onclick="copying('whole_code__ssma')" id="whole_code__ssma__icon">
-                                                    <img alt="copy icon" class="copy_icon">
-                                                </div>
-                                            </div>
                                             <p>
                                                 <pre>
-                                                    <code class="language-html" id="whole_code__ssma">
+                                                    <code class="language-html">
 &lt;a-marker preset=&quot;custom&quot; type=&quot;pattern&quot; url=&quot;custom_marker/custom.patt&quot;&gt;
     &lt;a-entity 
         gltf-model=&quot;https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf&quot;
@@ -351,11 +355,15 @@
     </div>
     <footer></footer>
 
-    <!-- Launching the highlight library -->
     <script>
-        document.querySelectorAll('pre').forEach(el => {
-            hljs.highlightElement(el);
-        });
-    </script>
-</body>
+        // Делаем так, чтобы иконка копирования всегда отображалась
+        hljs.addPlugin(
+            new CopyButtonPlugin({
+                autohide: false, 
+            })
+        );
+
+        // Раскрашиваем весь код
+        hljs.highlightAll();
+    </script></body>
 </html>

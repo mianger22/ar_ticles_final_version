@@ -36,13 +36,22 @@
 
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
-    <script src="index.js" defer></script>
 
     <!-- Сonnecting with highlight -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+
+    <!-- Сonnecting with highlight-copy -->
+    <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css">
+
+    <style>
+        .hljs {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -91,14 +100,9 @@
                             <div class="uk-article">
                                 <p class="uk-text-bold">2. Создаём стандартный html-файл</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                    <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('create_default_html')" id="create_default_html__icon">
-                                            <img alt="copy icon" class="copy_icon">
-                                        </div>
-                                    </div>
                                     <p>
                                         <pre>
-                                            <code class="language-html" id="create_default_html"> 
+                                            <code class="language-html"> 
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -124,14 +128,9 @@
                                 <p class="uk-text-bold">3. Подключаем библиотеку AR.js</p>
                                 <p>Прописываем подключение в разделе head:</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                    <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('connect_ar')" id="connect_ar__icon">
-                                            <img alt="copy icon" class="copy_icon">
-                                        </div>
-                                    </div>
                                     <p>
                                         <pre>
-                                            <code class="language-html" id="connect_ar">
+                                            <code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -154,14 +153,9 @@
                             <div class="uk-article">
                                 <p class="uk-text-bold">4. Пишем AR-код</p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                    <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('ar_code')" id="ar_code__icon">
-                                            <img alt="copy icon" class="copy_icon">
-                                        </div>
-                                    </div>
                                     <p>
                                         <pre>
-                                            <code class="language-html" id="ar_code">
+                                            <code class="language-html">
 &lt;a-scene embedded arjs&gt;
     &lt;a-marker preset=&quot;hiro&quot;&gt;
         &lt;a-entity
@@ -204,14 +198,9 @@
                                     В итоге получился следующий код нашего первого AR-приложения:
                                 </p>
                                 <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                    <div class="uk-card-badge uk-background-default">
-                                        <div onclick="copying('whole_code')" id="whole_code__icon">
-                                            <img alt="copy icon" class="copy_icon">
-                                        </div>
-                                    </div>
                                     <p>
                                         <pre>
-                                            <code class="language-html" id="whole_code">
+                                            <code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;ru&quot;&gt;
 &lt;head&gt;
@@ -329,14 +318,9 @@
                                         Теперь копируете в терминал следующие команды и нажимаете <kbd>Enter</kbd>:
                                     </p>
                                     <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
-                                        <div class="uk-card-badge uk-background-default">
-                                            <div onclick="copying('git_commands')" id="git_commands__icon">
-                                                <img alt="copy icon" class="copy_icon">
-                                            </div>
-                                        </div>
                                         <p>
                                             <pre>
-                                                <code class="language-git" id="git_commands">
+                                                <code class="language-git">
 git add --all
 git commit -m &quot;my first commit&quot;
 git push
@@ -472,9 +456,6 @@ git push
                                 </p>
                             </div>
                         </footer>
-                        <!-- ещё интересное
-                        <div></div>
-                        <div></div> -->
                     </section>
                 </main>
                 <article class="uk-margin-medium-top uk-margin-large-bottom">
@@ -563,11 +544,16 @@ git push
     </div>
     <footer></footer>
 
-    <!-- Launching the highlight library -->
     <script>
-        document.querySelectorAll('pre').forEach(el => {
-            hljs.highlightElement(el);
-        });
+        // Делаем так, чтобы иконка копирования всегда отображалась
+        hljs.addPlugin(
+            new CopyButtonPlugin({
+                autohide: false, 
+            })
+        );
+
+        // Раскрашиваем весь код
+        hljs.highlightAll();
     </script>
 </body>
 </html>

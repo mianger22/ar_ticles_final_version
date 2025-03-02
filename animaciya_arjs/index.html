@@ -98,7 +98,41 @@
                                     <li id="autoplay_info">
                                         <a class="uk-accordion-title" href>autoplay</a>
                                         <div class="uk-accordion-content">
-                                            <code class="area_code">autoplay</code> определяет, должна ли анимация начинаться автоматически при загрузке сцены. Значение по умолчанию - true.
+                                            <code class="area_code">autoplay</code> позволяет указать, должна ли анимация 
+                                            начинаться автоматически при загрузке сцены или элемента.
+                                            
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства является булевым, т.е. либо true, либо false.
+                                                    По умолчанию выбрано true.
+                                                </p>
+                                                <p>
+                                                    Поэтому, как Вы уже скорее всего поняли, если выбрано true, анимация начнется 
+                                                    автоматически при загрузке. А если false, анимация не начнется автоматически, 
+                                                    следовательно, запускаться будет вручную.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere" 
+    material="color: green" 
+    position="1 0 0" 
+    animation="property: position; to: 4 0 0; dur: 3000; autoplay: true"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере зелёная сфера (material и geometry) за 3 секунды (dur)
+                                                    переедет (property) вправо (to). Благодаря параметру autoplay, анимация начнётся 
+                                                    автоматически, как только элемент будет загружен и отображен на сцене.
+                                                </p>
+                                            </div>                                     
                                         </div>
                                     </li>
                                     <li id="delay_info">
@@ -615,8 +649,7 @@
             id="myObject"
             geometry="primitive: sphere" 
             material="color: yellow" 
-            position="0 0 0"
-            animation="property: position; to: 0 5 0; dur: 6000; onEnd: changeColor"&gt;
+            animation="property: position; to: 0 9 0; dur: 6000; onEnd: changeColor"&gt;
         &lt;/a-entity&gt;
     &lt;/a-marker&gt;
     &lt;a-entity camera&gt;&lt;/a-entity&gt;

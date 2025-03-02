@@ -36,13 +36,22 @@
     
     <!-- Connecting your own files -->
     <link rel="stylesheet" href="../common/custom/styles/index.css">
-    <!-- <script src="index.js" defer></script> -->
 
     <!-- Сonnecting with highlight -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="../common/highlight/highlight_ver.11.11.1/default.min.css">
+    <script src="../common/highlight/highlight_ver.11.11.1/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
+    <script src="../common/highlight/highlight_ver.11.11.1/go.min.js"></script>
+
+    <!-- Сonnecting with highlight-copy -->
+    <script src="../common/highlight/highlightjs-copy/highlightjs-copy.min.js"></script>
+    <link rel="stylesheet" href="../common/highlight/highlightjs-copy/highlightjs-copy.min.css">
+
+    <style>
+        .hljs {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="uk-child-width-expand" uk-grid>
@@ -1197,11 +1206,16 @@
     </div>
     <footer></footer>
     
-    <!-- Launching the highlight library -->
     <script>
-        document.querySelectorAll('pre').forEach(el => {
-            hljs.highlightElement(el);
-        });
+        // Делаем так, чтобы иконка копирования всегда отображалась
+        hljs.addPlugin(
+            new CopyButtonPlugin({
+                autohide: false, 
+            })
+        );
+
+        // Раскрашиваем весь код
+        hljs.highlightAll();
     </script>
 </body>
 </html>

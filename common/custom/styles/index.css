@@ -3,14 +3,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 pre {
-    /* white-space: pre-line;  */
     word-break: break-all; 
-    white-space: pre-wrap; /* Перенос строк */
-    /* word-wrap: break-word;  */
-    /* Перенос длинных слов */
+    white-space: pre-wrap;
 }
- 
-pre code, pre.hljs {
+
+:not(pre)>code, :not(pre)>kbd, :not(pre)>samp, pre code, pre.hljs {
     background-color: white;
 }
 

@@ -113,7 +113,7 @@
                                 <p>
                                     Прежде всего, мы заменим модель шлема на более подходящую для данного урока — модель утки. 
                                     Для этого нужно лишь изменить ссылку. 
-                                    <code class="area_code">
+                                    <code>
                                         gltf-model=&quot;https://cdn.rawgit.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf&quot;
                                     </code>
                                 </p>
@@ -122,7 +122,7 @@
                                 <p class="uk-text-bold">2. Изменение размеров</p>
                                 <p>
                                     Теперь мы немного уменьшим размер, так как утка была слишком большой, что мешало обзору.
-                                    <code class="area_code">
+                                    <code>
                                         scale=&quot;0.4 0.4 0.4&quot;
                                     </code>
                                 </p>
@@ -166,12 +166,12 @@
                                     В первой строке мы сохраняем нашу модель в переменную. Это позволит нам применить к ней всю анимацию. Мы используем метод getElementById, чтобы найти модель в коде по её уникальному идентификатору.
                                 </p>
                                 <p>
-                                    Чтобы это работало, нам нужно добавить атрибут <code class="area_code">id="rotating-model"</code> 
-                                    рядом с атрибутами <code class="area_code">a-entity</code>, чтобы наш код выглядел так: 
-                                    <code class="area_code">&lt;a-entity id=&quot;rotating-model&quot;&gt;&lt;/a-entity&gt</code>.
+                                    Чтобы это работало, нам нужно добавить атрибут <code>id="rotating-model"</code> 
+                                    рядом с атрибутами <code>a-entity</code>, чтобы наш код выглядел так: 
+                                    <code>&lt;a-entity id=&quot;rotating-model&quot;&gt;&lt;/a-entity&gt</code>.
                                 </p>
                                 <p>
-                                    Обратите внимание, что для решения нашей задачи атрибут <code class="area_code">position</code> не нужен, поэтому его можно удалить.
+                                    Обратите внимание, что для решения нашей задачи атрибут <code>position</code> не нужен, поэтому его можно удалить.
                                 </p>
                                 <p>
                                     Теперь давайте вкратце рассмотрим, что происходит в оставшихся строках кода:
@@ -179,14 +179,14 @@
                                 <ul>
                                     <li>
                                         <p>
-                                            <code class="area_code">let angle = 0;</code>
+                                            <code>let angle = 0;</code>
                                     
                                             Инициализация переменной , которая будет хранить текущий угол вращения модели. Начальное значение равно 0 радиан.                                        
                                         </p>
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">function animate();</code> 
+                                            <code>function animate();</code> 
                                     
                                             Объявление функции, которая будет отвечать за анимацию модели. Эта функция будет вызываться 
                                             многократно с помощью метода requestAnimationFrame.    
@@ -194,7 +194,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">angle += 0.02;</code>  
+                                            <code>angle += 0.02;</code>  
                                     
                                             Увеличение угла вращения на 0.02 радиана при каждом вызове функции. Это определяет 
                                             скорость вращения модели.
@@ -202,7 +202,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">model.object3D.position.x = Math.cos(angle) * 1;</code> 
+                                            <code>model.object3D.position.x = Math.cos(angle) * 1;</code> 
 
                                             Вычисление новой позиции по оси X для модели. Функция Math.cos(angle) используется для 
                                             определения X-координаты, что позволяет разместить модель на круговой орбите с радиусом 1.    
@@ -210,7 +210,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">model.object3D.position.z = Math.sin(angle) * 1;</code>  
+                                            <code>model.object3D.position.z = Math.sin(angle) * 1;</code>  
                                     
                                             Рассчитывание новой позиции по оси Z. Функция Math.sin(angle) служит для определения 
                                             Z-координаты, что обеспечивает плавную и округлую траекторию вращения.    
@@ -218,7 +218,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">requestAnimationFrame(animate);</code>
+                                            <code>requestAnimationFrame(animate);</code>
                                     
                                             Вызов функции requestAnimationFrame, чтобы продолжить анимацию. Это обеспечивает плавность 
                                             за счет запроса следующего кадра, где функция animate будет вызвана снова.        
@@ -226,7 +226,7 @@
                                     </li>
                                     <li>
                                         <p>
-                                            <code class="area_code">animate();</code>
+                                            <code>animate();</code>
                                     
                                             Первая инициализация анимации. После определения функции animate, мы вызываем ее, 
                                             чтобы запустить процесс вращения модели.                                            

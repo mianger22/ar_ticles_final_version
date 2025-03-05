@@ -66,6 +66,5 @@ picture img {
 }
 
 ul>:nth-child(n) {
-    margin-top: 10px;
     padding-left: 30px;
 }

@@ -70,7 +70,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 2 марта 2025 года
+                                    Обновлено 5 марта 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -255,8 +255,37 @@
                                         <a class="uk-accordion-title" href>dur</a>
                                         <div class="uk-accordion-content">
                                             <p>
-                                                <code class="area_code">dur</code> определяет продолжительность анимации в миллисекундах.
+                                                <code class="area_code">dur</code> определяет продолжительность анимации.
                                             </p>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства является положительным целым числом, равное количеству 
+                                                    миллисекунд. Например, dur: 1000 означает, что анимация будет длиться 1 секунду 
+                                                    (1000 миллисекунд). А dur: 500 будет означать, что время анимации равно половине 
+                                                    секунды.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code class="area_code">
+&lt;a-entity 
+    geometry="primitive: sphere" 
+    material="color: blue" 
+    position="0.5 1 0" 
+    animation="property: position; to: 0 -1 2.7; dur: 3000"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере синяя сфера (material и geometry) переедет (property) 
+                                                    с заранее заданной позиции "0.5 1 0" (position) на новую 
+                                                    "0 -1 2.7" (to). Перемещение займёт 3 секунды, как прописано в значении dur. 
+                                                </p>
+                                            </div>  
                                         </div>
                                     </li>
                                     <li id="easing_info">

@@ -70,7 +70,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 6 марта 2025 года
+                                    Обновлено 7 марта 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -983,8 +983,38 @@
                                         <a class="uk-accordion-title" href>position</a>
                                         <div class="uk-accordion-content">
                                             <p>
-                                                <code>position</code> позволяет задать изменения позиции 3D-объекта во время анимации.
+                                                <code>position</code> используется для указания текущего положения объекта в трехмерном 
+                                                пространстве. Это свойство определяет, где именно будет находиться объект в момент 
+                                                начала анимации, а также может быть использовано для задания конечного положения, если 
+                                                осуществляется анимация перемещения объекта.
                                             </p>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства является строковым, представляющее координаты объекта 
+                                                    в формате "x y z", где x, y и z — это координаты в трёхмерном пространстве по 
+                                                    соответствующим осям.
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code>
+&lt;a-entity 
+    geometry="primitive: box" 
+    material="color: black"
+    position="2 0 0" 
+    animation="property: position; to: -3 0 0; dur: 3000"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере чёрный куб (material и geometry) за 3 секунды (dur)
+                                                    переедет (property) от заданной изначальной позиции (position) влево (to). 
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="property_info">

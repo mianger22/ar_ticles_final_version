@@ -70,7 +70,7 @@
                                     Всё об атрибуте animation в AR.js 
                                 </h1> 
                                 <p class="uk-text-meta">
-                                    Обновлено 7 марта 2025 года
+                                    Обновлено 8 марта 2025 года
                                 </p>
                             </div> 
                             <!-- <p>
@@ -1021,8 +1021,34 @@
                                         <a class="uk-accordion-title" href>property</a>
                                         <div class="uk-accordion-content">
                                             <p>
-                                                <code>property</code> указывает, какое свойство объекта будет анимироваться (например, position, rotation, scale и т.д.).
+                                                <code>property</code> указывает, какое свойство объекта будет анимироваться.
                                             </p>
+                                            <div class="uk-card uk-card-default uk-card-body uk-margin-medium-top uk-margin-medium-bottom">
+                                                <div class="uk-card-title uk-text-lead">1. Параметры</div>
+                                                <p>
+                                                    Значение данного свойства является строковым, представляющее наименование 
+                                                    анимируемой характеристики объекта. О них я уже писал выше и ниже. Вот некоторые из 
+                                                    них: position, rotation, scale. 
+                                                </p>
+                                            </div>
+                                            <div class="uk-card uk-card-default uk-card-body">
+                                                <div class="uk-card-title uk-text-lead">2. Пример</div>
+                                                <div class="uk-margin-medium-top uk-margin-medium-bottom">
+                                                    <pre>
+                                                        <code>
+&lt;a-entity 
+    geometry="primitive: box" 
+    material="color: red"
+    animation="property: position; from: 2 0 0; to: -3 -6 -2; dur: 4000"&gt;
+&lt;/a-entity&gt;
+                                                        </code>
+                                                    </pre>
+                                                </div>
+                                                <p>
+                                                    В данном примере красный куб (material и geometry) за 4 секунды (dur)
+                                                    сменит свою позицию (property, from и to). 
+                                                </p>
+                                            </div>
                                         </div>
                                     </li>
                                     <li id="repeat_info">
